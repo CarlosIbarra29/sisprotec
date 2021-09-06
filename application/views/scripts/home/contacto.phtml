@@ -1,0 +1,118 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700,900" rel="stylesheet">
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".contact-off").hide();
+	});
+</script>
+<style>
+    .roboto-light{ font-family:"Roboto"; font-weight:300; }
+    .roboto-semi-bold{ font-family:"Roboto"; font-weight:400; }
+    .roboto-bold{ font-family:"Roboto"; font-weight:700; }
+    .monto { height: auto; resize: none; }
+.input-roboto {
+    height: 35px;
+	color: rgb(153,153,153); font-family: "Roboto"; font-size: 15px; font-weight: 500; border: 0.1rem solid #a5a5a5; padding: 7px 18px; border-radius: 13px;
+}
+
+    #contacto{ 
+        color: rgb(91,105,120); 
+        font-size: 25px; 
+        text-decoration: underline; 
+        line-height: 30px;
+    }
+
+ @media (max-width: 991px){
+
+    #space{
+        /*margin-top: -54px;  */
+    }
+
+    #contacto{ 
+        font-size: 18px;
+        color: rgb(91,105,120); 
+        text-decoration: underline; 
+        line-height: 30px;
+    }
+
+}
+
+</style>
+
+
+
+<div class="container">
+
+           <div class="row mt-5">
+            <div class="col-md-12 text-center mt-4">
+              <span style="font-size:33px; color: #575757; letter-spacing: 0.2em;">CONTACTO</span> 
+            </div>
+
+            <div class="col-md-12 text-center mt-4">
+                <span style="font-size:23px; color: rgb(74,79,84);">Si tienes algúna duda o comentario siéntete<br>  
+                libre de escribirnos</span> 
+            </div>
+          </div>     
+
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 text-center formulario mt-5">
+            <form action="/home/requestaddmensaje" method="POST" enctype="multipart/form-data" class="form-horizontal form-material" id="submit_mensaje">
+                <div class="row">
+                    <div class="col-md-6 mt-2">
+                        <input class="form-control" id="namecontacto" type="text" name="namecontacto" placeholder="Tu nombre" data-required="true">
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <input class="form-control" id="mailcontacto" type="email" name="mailcontacto" placeholder="Correo Electrónico" data-required="true">
+                    </div>
+                
+                    <div class="col-md-12" style="margin-top: 20px;">
+                        <textarea class="form-control" id="themessage" name="message"  rows="2" placeholder="Mensaje" data-required="true"></textarea>
+                    </div>
+                </form>
+                    <div class="col-md-12" id="textali" style="margin-top: 15px;">
+                        <input type="button" value="Ponerse en contacto" class="btn form-control" style="color: white; height: 60px; font-size: 20px; background-color: red !important; border-radius: 7px;">
+                    </div>
+
+                </div>
+            
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    
+    <div class="col-md-12 divcontacto" style="margin-top: 40px; margin-bottom: 40px;">
+    	<div class="col-md-12 text-center"> 
+    		<h3 style="color: rgb(153,153,153); font-size: 21px;" class="roboto-semi-bold">O simplemente envía un correo electrónico a:</h3>      
+            <!-- https://outlook.live.com/owa/marcocentro@outlook.com/ -->
+    		<span ><a href="" target="blank" id="contacto" class="roboto-light">contacto@sisprotec.com</a></span>
+    	</div>
+    </div>
+</div>
+<div style="margin-top: 110px;"></div>
+
+
+<script type="text/javascript">
+    $("#textali").click(function(){
+     	var namecontacto = document.getElementById("namecontacto").value;
+        var mailcontacto = document.getElementById("mailcontacto").value;
+        var themessage = document.getElementById("themessage").value;
+
+        if(namecontacto == "" || mailcontacto == "" || themessage == "" ){
+            swal({
+                title: "Para continuar es necesario agregar la información solicitada",
+            });
+        }else{
+            swal("El mesaje se envio con exito, en un momento nos pondremos en contacto contigo", {
+                icon: "success",
+                buttons: false,
+        	});    
+            setTimeout(submitForm, 1500);     
+        }
+
+    });
+
+
+    function submitForm() {
+        document.getElementById("submit_mensaje").submit()
+    }
+</script>
