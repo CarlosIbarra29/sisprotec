@@ -13,7 +13,7 @@ class IndexController extends Zend_Controller_Action{
 
     public function indexAction(){
         if(empty($this->_session->id)){
-            $url = "/panel";
+            $url = "landing";
             $this->_redirect($url);
         }
     }
@@ -62,7 +62,7 @@ class IndexController extends Zend_Controller_Action{
 
         Zend_Session::destroy();
         
-        $url = "/home";
+        $url = "/landing";
         $this->redirect($url);
         //$this->_redirect('/');
     }//logout

@@ -1,0 +1,57 @@
+
+<div style="padding: 5%;">
+
+<h3><b>Seccion - <?php print( $this->aData[0]['SECCION'] )?></b></h3>
+
+<table>
+	
+	<thead>
+	
+	  <tr>
+	
+	      <th>Titulos</th>
+	
+	      <th>Texto</th>
+	
+	      <th>Color</th>
+
+	      <th>Editar</th>
+	
+	  </tr>
+	
+	</thead>
+
+	<tbody>
+	
+	  <tr>
+
+	  	<?php foreach ($this->aData as $k => $v):?>
+	
+		    <td><?php print $v['TEXTO_TITULO'] ?></td>
+
+		    <td><?php print $v['TEXTO'] ?></td>
+
+		    <td>
+
+		    	<i class="small material-icons" style="color: <?php print $v['COLOR'] ?>;">brightness_1</i>
+
+		    </td>
+
+		    <td>
+
+		    	<a href="/quienes/update?catId=<?php echo $v['ID_SECCION'];?>" class="btn-floating btn-small "><i class="large material-icons">mode_edit</i></a>
+
+		    </td>
+
+	    <?php endforeach;?>
+	
+	  </tr>
+
+	</tbody>
+
+</table>
+
+</div>
+            
+
+            
