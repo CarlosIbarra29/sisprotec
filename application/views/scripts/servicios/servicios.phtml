@@ -1,0 +1,213 @@
+<?php 
+	function isActhref($nameBtn,$urlname){
+	    if($nameBtn==1 && $urlname==null){
+	    	return "active"; 
+	    }
+	    return ($nameBtn == $urlname)?"active":"";
+	}
+
+    if (isset($_GET['pagina'])) {
+        $pagina = $_GET['pagina'];
+    } else {
+        $pagina = 1;
+    }  
+?>
+
+<?php 
+
+    $links = "";
+    $url="";
+
+        if($this->total== 1){
+            $links .= "<li class=\"page-item active\" ><a href=\"{$url}?pagina=1\">1</a></li>";
+        }else{
+            if ($this->total >= 1 && $pagina <= $this->total) {
+
+              if (isset($_GET['pagina']) && $this->actpage != 1) {
+                $links .= "<li class=\"page-item\" ><a href=\"{$url}?pagina=1\">1</a></li>";
+              }else{
+                $links .= "<li class=\"page-item active\" ><a href=\"{$url}?pagina=1\">1</a></li>";
+              }
+                
+                $i = max(2, $pagina - 3);
+                if ($i > 2)
+                    $links .= " <li><a>...</a></li> ";
+                for (; $i < min($pagina + 3, $this->total); $i++) {
+                  if($i ==$this->actpage){
+                    $links .= "<li class=\"page-item active\" ><a href=\"{$url}?pagina={$i}\">{$i}</a></li>";
+                  }else{
+                    $links .= "<li class=\"page-item \" ><a href=\"{$url}?pagina={$i}\">{$i}</a></li>";
+                  }
+                }
+                if ($i != $this->total)
+                    $links .= " <li><a>...</a></li> ";
+                if($i ==$this->actpage){
+                    $links .= "<li class=\"page-item active\"><a href=\"{$url}?pagina={$this->total}\">{$this->total}</a></li>";
+                }else{
+                    $links .= "<li class=\"page-item\"><a href=\"{$url}?pagina={$this->total}\">{$this->total}</a></li>";
+                }
+                
+            }           
+        }
+
+
+ ?>
+
+
+
+<style type="text/css">
+  .st-btn{
+    background-color: black; 
+    color: #ffd700;
+  }
+
+</style>
+
+
+<div class="row mt-4">
+	<div class="col m12 s12 text-center" style="margin-top: 15px;">
+		<div class="row">
+			<div class="col m6 s12 text-right">
+			</div>
+			<div class="col m6 s12 text-right">
+				<a href="/servicios/crearservicio" class="st-btn btn">+ Agregar Servicio</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="row">
+    <div class="col m12 s12 text-center">
+      <span style="font-size:30px; color: rgb(74,79,84); letter-spacing: 0.1em; font-weight: bold;">Servicios</span>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col s12 m12">
+      <div class="card">
+        <div class="card-content">
+
+			<div class="row">
+				<div class="col m2 s12"></div>
+				<div class="col m8 s12">
+					<form action="/panel/searchusuarios" enctype="multipart/form-data" class="form-horizontal form-material">
+				        <div class="input-field col m8 s8">
+				          <input placeholder="Ingresa nombre" name="nombre" id="first_name" type="text" class="validate">
+				          <label for="first_name">Buscar por Nombre</label>
+				        </div>
+				        <div class="input-field col m4 s4">
+				        	<button tyle="submit" id="add_user" class="st-btn btn">Buscar <i class="material-icons left">search</i></button>
+				        </div>
+			    	</form>
+				</div>
+				<div class="col m2 s12"></div>
+			</div>
+
+			<table class="table text-left table-hover">
+			<thead>
+				<tr style="background-color: #EDEDED">
+					<th>Nombre</th>	
+					<th>Descripción</th>	
+					<th>Imagen</th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr> 
+			</thead>
+			<?php foreach ($this->paginator as $usr) { ?>
+			<tbody>
+				<tr>
+					<td><?php echo $usr["nombre"]; ?></td>
+					<td><?php echo $usr["descripcion"]; ?></td>
+					<td>
+						<a class="example-image-link" href="/<?php echo $usr["imagen"]; ?>" data-lightbox="example-1"><img class="example-image oculto" src="/<?php echo $usr["imagen"]; ?>"  alt="image-1" style="width: 100px;"/></a>
+					</td>
+					<td>
+						<a href="/servicios/editarservicio/id/<?php echo $usr["id"] ?>"><i class="fa fa-2x fa-edit"></i></a>
+					</td>
+					<td>
+						<a class="delete_file" data-id="<?php echo $usr["id"]; ?>" data-op="3"><span class="warning"><i class="fa fa-2x fa-trash" style="color: red"></i></span></a>
+					</td>
+				</tr>
+			</tbody>
+			<?php } ?>
+		</table>
+
+		<div class="row">
+		    <div class="col m12 s12 text-center">
+		        <div class="white-box">
+		            <div class="paginationControl">
+		                <ul class="pagination justify-content-center">
+		               		<?php if($pagina - 1 == 0){ ?>
+		                    	<li class="page-item disabled">
+		                        	<span class="page-link">Anterior</span>
+		                    	</li>
+		               		<?php }else{ ?>
+		                        <li class="page-item">
+		                            <a class="page-link <?php if($pagina <= 1){ echo 'disabled'; } ?> " href="<?php if($pagina <= 1){ echo '#'; } else { echo "?pagina=".($pagina - 1); } ?>"> Anterior </a>
+		                        </li>
+		               		<?php } ?>
+		                        <li class="page-item <?php echo isActhref($links,$this->actpage);?>">
+		                            <?php echo $links; ?>
+		                        </li>
+		               		<?php if($pagina >= $this->total): ?>
+		                       	<li class="page-item disabled">
+		                            <span class="page-link">Siguente</span>
+		                       	</li>
+		                    <?php else: ?>
+		                        <li class="page-item">
+		                            <a class="page-link"  href="<?php echo "?pagina=".($pagina + 1); ?>">Siguiente</a>
+		                        </li>
+		                   	<?php endif; ?>
+		                </ul>
+		            </div>
+		        </div>
+		    </div> 
+		</div>
+
+        </div>
+      </div>
+    </div>
+</div>
+
+<script src="/js/lightbox.js"></script>
+
+<script type="text/javascript">
+    $(".delete_file").click(function(){
+      var id = $(this).data('id');
+      var op = $(this).data('op');
+
+    swal({
+      title: "Estas seguro de eliminar el registro?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+        if (willDelete) {
+        swal("Espere un momento, la información esta siendo procesada", {
+          icon: "success",
+          buttons: false,
+        });
+              var request = $.ajax({
+                  url:"/servicios/requestdeleteservicio",
+                  method:"POST",
+                  data: { id : id, op : op},
+                  processData: true,
+              });
+        //-------------------end de ajax---------------------------
+        //--------- ----peticion de respuesta de ajax------------------
+              request.done(function(response) {
+                  console.log(response);//imprime lo que responde el ajax
+                  window.location.reload(true);
+              });
+        //-------------------end de respuesta ajax---------------------
+               return false;
+        } else {
+          swal("La asignacion fue cancelada!");
+        }
+    });
+    });
+</script>
