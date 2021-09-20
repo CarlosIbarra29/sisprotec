@@ -19,6 +19,22 @@ class Application_Model_ServiciosModel extends Zend_Db_Table_Abstract{
         }
     }// END INSERT SERVICIO
 
+    public function updateservicioprincipal($post,$table,$urldb){
+        try {
+            $db = Zend_Db_Table::getDefaultAdapter();
+            $qry = $db->query("UPDATE $table SET TEXTO_TITULO = ?, TEXTO = ?, IMAGEN = ? WHERE ID_TEXTO = ?",array(
+                $post['name'],
+                $post['desc'],
+                $urldb,
+                $post["ids"]));
+            $db->closeConnection();               
+            return $qry;
+        } 
+        catch (Exception $e) {
+            echo $e;
+        }
+    }// END UPDATE SERVICIO
+
     public function updateservicio($post,$table,$urldb){
         try {
             $db = Zend_Db_Table::getDefaultAdapter();

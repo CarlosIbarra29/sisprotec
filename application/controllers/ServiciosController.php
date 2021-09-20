@@ -32,6 +32,20 @@ class ServiciosController extends Zend_Controller_Action{
         $sql= $this->view->paginator= $this->_servicio->Getpaginationservicio($table,$offset,$no_of_records_per_page);
 
 
+
+        $id = 2; // SERVICIO
+        $table="texto";
+        $wh="ID_TEXTO";
+        $this->view->serv_principal = $this->_season->GetSpecific($table,$wh,$id);
+
+
+    }
+
+    public function editarprincipalAction(){
+        $id = 2; // SERVICIO
+        $table="texto";
+        $wh="ID_TEXTO";
+        $this->view->serv_principal = $this->_season->GetSpecific($table,$wh,$id);      
     }
 
     public function crearservicioAction(){
@@ -46,6 +60,45 @@ class ServiciosController extends Zend_Controller_Action{
             $this->view->servicio = $this->_season->GetSpecific($table,$wh,$id);
         }else {
             return $this-> _redirect('/servicios/servicios');
+        }
+    }
+
+    public function requestupdateservicioprincipalAction(){
+        $this->_helper->layout()->disableLayout();
+        $this->_helper->viewRenderer->setNoRender(true);
+        $post = $this->getRequest()->getPost();
+        
+        if($this->getRequest()->getPost()){
+
+            $name = $_FILES['url']['name'];
+            if(empty($name)){ 
+                $urldb = $post['img_actual'];
+            }else{
+                $bytes = $_FILES['url']['size'];
+                $res = $this->formatSizeUnits($bytes);
+                if($res == 0){ 
+                    print '<script language="JavaScript">'; 
+                    print 'alert("La imagen supera el maximo de tamaño");'; 
+                    print '</script>'; 
+                }else{
+                    $info = new SplFileInfo($_FILES['url']['name']);
+                    $ext = $info->getExtension();
+                    $url = 'img/servicios/';
+                    $urldb = $url.$info;
+                    move_uploaded_file($_FILES['url']['tmp_name'],$urldb);
+                }
+            }
+
+            $table="texto";
+            $result = $this->_servicio->updateservicioprincipal($post,$table,$urldb);
+
+            if ($result) {
+                return $this-> _redirect('/servicios/servicios');
+            }else{
+                print '<script language="JavaScript">'; 
+                print 'alert("Ocurrio un error: Comprueba los datos.");'; 
+                print '</script>'; 
+            }
         }
     }
 

@@ -1,0 +1,101 @@
+<script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>
+
+<style type="text/css">
+  .st-btn{
+    background-color: black; 
+    color: #ffd700;
+  }
+
+  #guardar:hover{
+    background-color: green; 
+    color: #ffd700;
+  }
+
+  #regresar:hover{
+    background-color: red; 
+    color: #ffd700;
+  }
+</style>
+
+
+<div class="row" style="margin-top: 20px;">
+    <div class="col m12 s12 text-center">
+      <span style="font-size:30px; color: rgb(74,79,84); letter-spacing: 0.1em; font-weight: bold;">Editar Modulo</span>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col s12 m12">
+      <div class="card">
+        <div class="card-content">
+          <?php foreach ($this->serv_principal as $key) { ?>
+          		<div class="row">
+          			<form action="/servicios/requestupdateservicioprincipal" method="POST" enctype="multipart/form-data" class="form-horizontal form-material" id="submit_servicio">
+          				<input type="hidden" name="ids" value="<?php echo $key['ID_TEXTO']; ?>">
+          			<div class="col m12 s12">
+	                  	<div class="input-field col m6 s12">
+	                    	<i class="material-icons prefix">account_circle</i>
+	                      	<input id="name" type="text" value="<?php echo $key['TEXTO_TITULO']; ?>" name="name" class="validate" required>
+	                      	<label for="name">* Nombre:</label>
+	                  	</div>
+
+		                <div class=" file-field input-field col m6 s12">
+		                  <div class="btn st-btn">
+		                    <span>Imagen de fondo </span>
+		                    <input type="file" name="url">
+		                  </div>
+		                  <div class="file-path-wrapper">
+		                    <input class="file-path validate" name="img_actual" id="imagen" value="<?php echo $key['IMAGEN']; ?>" type="text">
+		                  </div>
+		                </div>
+		                  <div class="input-field col m12 s12">
+		                    <label for="descr">* Descripción </label>
+		                  </div>
+		                    <div class="input-field col m12 s12">
+		                        <textarea class="" id="descr" rows="100" cols="100"  name="desc"></textarea>
+		                        <script type="text/javascript">CKEDITOR.replace( 'descr',{ height : 100, });</script>                 
+		                    </div>
+          			</div>
+          			</form>
+          		</div>
+
+
+	            <div class="row">
+	              <div class="col m12 s12 text-right">
+	                <a href="/servicios/servicios" class="btn st-btn" id="regresar">Regresar</a>
+	                <button class="btn st-btn" id="guardar">Guardar</button>
+	              </div>
+	            </div>
+
+          <?php } ?>
+        </div>
+
+      </div>
+    </div>
+</div>
+
+<script src="/js/lightbox.js"></script>
+<script type="text/javascript">
+        $("#guardar").click(function(){
+          var nombre = document.getElementById("name").value;
+
+            if(nombre == ""){
+                swal({
+                  title: "Para agregar a un servicio debes ingresar todos los datos.",
+                });
+            }else{
+            swal("Espere un momento, la información esta siendo procesada", {
+                    icon: "success",
+                    buttons: false,
+            });    
+                setTimeout(submitForm, 1500);     
+            }
+
+        });
+
+        function submitForm() {
+            document.getElementById("submit_servicio").submit()
+        }
+           
+</script>

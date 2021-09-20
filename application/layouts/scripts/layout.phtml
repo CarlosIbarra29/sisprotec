@@ -344,6 +344,9 @@ setInterval(function() {
         $actual_link = "$_SERVER[REQUEST_URI]";
         $filename = substr(strrchr($actual_link, "/"), 1);
 
+        $urledit = "/servicios/editarprincipal/id/".$filename."";
+        if($actual_link == $urledit){ return "active"; }
+
         $urledit = "/servicios/crearservicio";
         if($actual_link == $urledit){ return "active"; } 
  
