@@ -1,7 +1,7 @@
 
 <div style="padding: 5%;">
 
-<h3><b>Seccion - <?php print( $this->aData[0]['SECCION'] )?></b></h3>
+<h3><b>Secciones</b></h3>
 
 <table>
 	
@@ -22,30 +22,29 @@
 	</thead>
 
 	<tbody>
+
+		<?php foreach ($this->aData as $k => $v):?>
 	
-	  <tr>
+	  		<tr>  	
+		
+			    <td><?php print $v['TEXTO_TITULO'] ?></td>
 
-	  	<?php foreach ($this->aData as $k => $v):?>
-	
-		    <td><?php print $v['TEXTO_TITULO'] ?></td>
+			    <td><?php print $v['TEXTO'] ?></td>
 
-		    <td><?php print $v['TEXTO'] ?></td>
+			    <td>
 
-		    <td>
+			    	<i class="small material-icons" style="color: <?php print $v['COLOR'] ?>;">brightness_1</i>
 
-		    	<i class="small material-icons" style="color: <?php print $v['COLOR'] ?>;">brightness_1</i>
+			    </td>
 
-		    </td>
+			    <td>
 
-		    <td>
+			    	<a href="/quienes/update?catId=<?php echo $v['ID_SECCION'];?>" class="btn-floating btn-small "><i class="large material-icons">mode_edit</i></a>
 
-		    	<a href="/quienes/update?catId=<?php echo $v['ID_SECCION'];?>" class="btn-floating btn-small "><i class="large material-icons">mode_edit</i></a>
+			    </td>
+	  		</tr>
 
-		    </td>
-
-	    <?php endforeach;?>
-	
-	  </tr>
+	  <?php endforeach;?>
 
 	</tbody>
 

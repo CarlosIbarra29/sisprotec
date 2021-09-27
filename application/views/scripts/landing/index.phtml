@@ -1,11 +1,403 @@
+<style>
 
-<div class="container-fluid">
 
-	<h4 style="color: <?php print $this->aData[0]['COLOR'] ?>;"><?php print $this->aData[0]['TEXTO_TITULO'] ?></h4>
+	.PADDING{
 
-	<p><?php print $this->aData[0]['TEXTO'] ?></p>
+		padding: 150px;
 
-</div>
+	}
+	
+	.QUIENES_SOMOS{
+	    
+	    background: url(<?php print $this->aData[0]['IMAGEN'] ?>) no-repeat fixed center;
+	    
+	    -webkit-background-size: cover;
+	    
+	    -moz-background-size: cover;
+	    
+	    -o-background-size: cover;
+	    
+	    background-size: cover;
+	    
+	    height: 100%;
+	    
+	    width: 100% ;
+
+	}
+
+	.SIS_TRACK{
+
+		background: url(<?php print $this->aData[2]['IMAGEN'] ?>) no-repeat fixed center;
+	    
+	    -webkit-background-size: cover;
+	    
+	    -moz-background-size: cover;
+	    
+	    -o-background-size: cover;
+	    
+	    background-size: cover;
+	    
+	    height: 100%;
+	    
+	    width: 100% ;
+
+	}
+
+	.CUSTODIA{
+	    
+	    background: url(<?php print $this->aData[3]['IMAGEN'] ?>) no-repeat fixed center;
+	    
+	    -webkit-background-size: cover;
+	    
+	    -moz-background-size: cover;
+	    
+	    -o-background-size: cover;
+	    
+	    background-size: cover;
+	    
+	    height: 100%;
+	    
+	    width: 100% ;
+
+	}
+
+	.CONSULTORIA{
+	    
+	    background: url(<?php print $this->aData[4]['IMAGEN'] ?>) no-repeat fixed center;
+	    
+	    -webkit-background-size: cover;
+	    
+	    -moz-background-size: cover;
+	    
+	    -o-background-size: cover;
+	    
+	    background-size: cover;
+	    
+	    height: 100%;
+	    
+	    width: 100% ;
+
+	}
+
+	.RASTREOS{
+	    
+	    background-color:  whitesmoke;
+	    
+	    -webkit-background-size: cover;
+	    
+	    -moz-background-size: cover;
+	    
+	    -o-background-size: cover;
+	    
+	    background-size: cover;
+
+	}
+
+	.CONSULTORIA_PROCESOS{
+	    
+	    background: url(<?php print $this->aData[6]['IMAGEN'] ?>) no-repeat fixed center;
+	    
+	    -webkit-background-size: cover;
+	    
+	    -moz-background-size: cover;
+	    
+	    -o-background-size: cover;
+	    
+	    background-size: cover;
+	    
+	    height: 100%;
+	    
+	    width: 100% ;
+
+	}
+
+	.CAPACITACION{
+	    
+	    background: url(<?php print $this->aData[7]['IMAGEN'] ?>) no-repeat fixed center;
+	    
+	    -webkit-background-size: cover;
+	    
+	    -moz-background-size: cover;
+	    
+	    -o-background-size: cover;
+	    
+	    background-size: cover;
+	    
+	    height: 100%;
+	    
+	    width: 100% ;
+
+	}
+
+	.ANALISIS{
+	    
+	    background: url(<?php print $this->aData[8]['IMAGEN'] ?>) no-repeat fixed center;
+	    
+	    -webkit-background-size: cover;
+	    
+	    -moz-background-size: cover;
+	    
+	    -o-background-size: cover;
+	    
+	    background-size: cover;
+	    
+	    height: 100%;
+	    
+	    width: 100% ;
+
+	}
+
+	.AUDITORIA{
+	    
+	    background: url(<?php print $this->aData[9]['IMAGEN'] ?>) no-repeat fixed center;
+	    
+	    -webkit-background-size: cover;
+	    
+	    -moz-background-size: cover;
+	    
+	    -o-background-size: cover;
+	    
+	    background-size: cover;
+	    
+	    height: 100%;
+	    
+	    width: 100% ;
+
+	}
+
+</style>
+
+<div class="row QUIENES_SOMOS PADDING">
+
+	<div class="col-sm-6 col-md-6 col-xs-6 ">
+
+		<h4 class="text-center" style="color: <?php print $this->aData[0]['COLOR'] ?>;"><?php print $this->aData[0]['TEXTO_TITULO'] ?></h4>
+
+		<br>
+
+		<p><?php print $this->aData[0]['TEXTO'] ?></p>
+
+	</div>
+
+	<div class="col-sm-6 col-md-6 col-xs-6">
+
+	</div>
+
+</div>	
+
+<hr>
+
+<div class="row SIS_TRACK PADDING">
+
+	<div class="col-sm-6 col-md-6 col-xs-6 ">
+
+		<h4 class="text-center" style="color: <?php print $this->aData[2]['COLOR'] ?>;"><?php print $this->aData[2]['TEXTO_TITULO'] ?></h4>
+
+		<br>
+
+		<p><?php print $this->aData[2]['TEXTO'] ?></p>
+
+	</div>
+
+	<div class="col-sm-6 col-md-6 col-xs-6">
+
+	</div>
+
+</div>	
+
+<hr>
+
+<div class="row CUSTODIA PADDING">
+
+	<div class="col-sm-6 col-md-6 col-xs-6 ">
+
+		<h4 class="text-center" style="color: <?php print $this->aData[3]['COLOR'] ?>;"><?php print $this->aData[3]['TEXTO_TITULO'] ?></h4>
+
+		<br>
+
+		<p><?php print $this->aData[3]['TEXTO'] ?></p>
+
+	</div>
+
+	<div class="col-sm-6 col-md-6 col-xs-6">		
+
+	</div>
+
+</div>	
+
+<hr>
+
+<div class="row CONSULTORIA PADDING">
+
+	<div class="col-sm-6 col-md-5 col-xs-5 ">
+
+	</div>
+
+	<div class="col-sm-7 col-md-7 col-xs-7">
+
+		<h4 class="text-center" style="color: <?php print $this->aData[4]['COLOR'] ?>;"><?php print $this->aData[4]['TEXTO_TITULO'] ?></h4>
+
+		<br>
+
+		<p><?php print $this->aData[4]['TEXTO'] ?></p>
+
+	</div>
+
+</div>	
+
+<hr>
+
+<div class="row RASTREOS PADDING">
+
+	<div class="col-sm-4 col-md-4 col-xs-4 ">
+
+		<div class="thumbnail">
+
+			<img src="<?php print $this->aData[5]['IMAGEN'] ?>" alt="Nature" style="width:100%">
+
+			<br><br>
+
+			<h5 class="text-center" style="color: <?php print $this->aData[5]['COLOR'] ?>;"><?php print $this->aData[5]['TEXTO_TITULO'] ?></h5>
+
+			<hr>
+     
+	         <div class="caption">
+	     
+	            <p><?php print $this->aData[5]['TEXTO'] ?></p>
+	     
+	         </div>
+
+	    </div>
+
+	</div>
+
+	<div class="col-sm-4 col-md-4 col-xs-4 ">
+
+		<div class="thumbnail">
+
+			<img src="<?php print $this->aData[10]['IMAGEN'] ?>" alt="Nature" style="width:100%">
+
+			<br><br>
+
+			<h5 class="text-center" style="color: <?php print $this->aData[10]['COLOR'] ?>;"><?php print $this->aData[10]['TEXTO_TITULO'] ?></h5>
+
+			<hr>
+     
+	         <div class="caption">
+	     
+	            <p><?php print $this->aData[10]['TEXTO'] ?></p>
+	     
+	         </div>
+
+	    </div>
+
+	</div>
+
+	<div class="col-sm-4 col-md-4 col-xs-4 ">
+
+		<div class="thumbnail">
+
+			<img src="<?php print $this->aData[11]['IMAGEN'] ?>" alt="Nature" style="width:100%">
+
+			<br><br>
+
+			<h5 class="text-center" style="color: <?php print $this->aData[11]['COLOR'] ?>;"><?php print $this->aData[11]['TEXTO_TITULO'] ?></h5>
+
+			<hr>
+     
+	         <div class="caption">
+	     
+	            <p><?php print $this->aData[11]['TEXTO'] ?></p>
+	     
+	         </div>
+
+	    </div>
+
+	</div>
+
+</div>	
+
+<hr>
+
+<div class="row CONSULTORIA_PROCESOS PADDING">
+
+	<div class="col-sm-6 col-md-6 col-xs-6 ">
+
+		<h4 class="text-center" style="color: <?php print $this->aData[6]['COLOR'] ?>;"><?php print $this->aData[6]['TEXTO_TITULO'] ?></h4><br>
+
+		<br>
+
+		<p><?php print $this->aData[6]['TEXTO'] ?></p>
+
+	</div>
+
+	<div class="col-sm-6 col-md-6 col-xs-6">
+
+	</div>
+
+</div>	
+
+<hr>
+
+<div class="row CAPACITACION PADDING">
+
+	<div class="col-sm-6 col-md-5 col-xs-5 ">
+
+	</div>
+
+	<div class="col-sm-7 col-md-7 col-xs-7">
+
+		<h4 class="text-center" style="color: <?php print $this->aData[7]['COLOR'] ?>;"><?php print $this->aData[7]['TEXTO_TITULO'] ?></h4>
+
+		<br>
+
+		<p><?php print $this->aData[7]['TEXTO'] ?></p>
+
+	</div>
+
+</div>	
+
+<hr>
+
+<div class="row ANALISIS PADDING">
+
+	<div class="col-sm-4 col-md-4 col-xs-4 ">
+
+	</div>
+
+	<div class="col-sm-8 col-md-8 col-xs-8">
+
+		<h4 class="text-center" style="color: <?php print $this->aData[8]['COLOR'] ?>;"><?php print $this->aData[8]['TEXTO_TITULO'] ?></h4>
+
+		<br>
+
+		<p><?php print $this->aData[8]['TEXTO'] ?></p>
+
+	</div>
+
+</div>	
+
+<hr>
+
+<div class="row AUDITORIA PADDING">
+
+	<div class="col-sm-6 col-md-6 col-xs-6 ">
+
+		<h4 class="text-center" style="color: <?php print $this->aData[9]['COLOR'] ?>;"><?php print $this->aData[9]['TEXTO_TITULO'] ?></h4>
+
+		<br>
+
+		<p><?php print $this->aData[9]['TEXTO'] ?></p>
+
+	</div>
+
+	<div class="col-sm-6 col-md-6 col-xs-6">
+		
+	</div>
+
+</div>	
+
+
 
 
 
