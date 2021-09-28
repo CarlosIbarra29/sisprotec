@@ -8,7 +8,9 @@ class Application_Model_LandingModel extends Zend_Db_Table_Abstract{
         
             $db = Zend_Db_Table::getDefaultAdapter();
 
-            $sql = "SELECT * FROM TEXTO";
+            $sql = "SELECT A.imagen as IMAGEN, A.nombre as TEXTO_TITULO, A.descripcion AS TEXTO , A.color as COLOR 
+
+                    FROM servicios A  WHERE A.tpo_seccion = 1";
         
             $qry = $db->query( $sql );
         

@@ -15,6 +15,12 @@ class LandingController extends Zend_Controller_Action{
 
         $aData = $this->_landing->ALL_GET_TEXTOS();
 
+        print '<pre>';
+
+        var_dump($aData);
+
+        print '</pre>';
+
         $this->view->aData = $aData;
 
     }
