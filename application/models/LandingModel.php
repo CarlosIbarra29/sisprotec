@@ -128,6 +128,32 @@ class Application_Model_LandingModel extends Zend_Db_Table_Abstract{
 
     }
 
+    public function ALL_GET_TEXTOS_CARRUSEL(){
+
+        try {
+        
+            $db = Zend_Db_Table::getDefaultAdapter();
+
+            $sql = "SELECT A.imagen as IMAGEN, A.nombre as TEXTO_TITULO, A.descripcion AS TEXTO , A.color as COLOR 
+
+                    FROM servicios A  WHERE A.tpo_seccion = 2";
+        
+            $qry = $db->query( $sql );
+        
+            $row = $qry->fetchAll();
+
+            $db->closeConnection();
+            
+            return $row;
+        
+        } catch (Exception $e) {
+        
+            echo $e;
+        
+        }
+    
+    }
+
 
 
 }
