@@ -172,11 +172,16 @@
     	height: 100%;
     }
 
+    .PADDING_INI{
+
+    	padding: 150px;
+    }
+
 </style>
 
-<div class="row QUIENES_SOMOS PADDING">
+<div class="row QUIENES_SOMOS">
 
-	<div class="col-sm-6 col-md-6 col-xs-6 ">
+	<div class="col-sm-6 col-md-6 col-xs-6 PADDING_INI">
 
 		<h4 class="text-center" style="color: <?php print $this->aData[0]['COLOR'] ?>;"><?php print $this->aData[0]['TEXTO_TITULO'] ?></h4>
 
@@ -224,15 +229,15 @@
 		  </div>
 		  
 		  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-		  
-		    <span class="carousel-control-prev-icon" style="color: black;"></span>
-		  
+
+		    <span class="carousel-control-prev-icon" style="back"></span>
+
 		  </a>
-		  
+
 		  <a class="carousel-control-next" href="#demo" data-slide="next">
-		  
+
 		    <span class="carousel-control-next-icon"></span>
-		  
+
 		  </a>
 
 		</div>
