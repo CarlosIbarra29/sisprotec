@@ -13,13 +13,20 @@ class LandingController extends Zend_Controller_Action{
 
         $this->_helper->layout()->setLayout('layout_landing');
 
-        $aData = $this->_landing->ALL_GET_TEXTOS();
+        // $aData = $this->_landing->ALL_GET_TEXTOS();
 
-        $aDataImg = $this->_landing->ALL_GET_TEXTOS_CARRUSEL();
+        // $aDataImg = $this->_landing->ALL_GET_TEXTOS_CARRUSEL();
 
-        $this->view->aDataImg = $aDataImg;
+        // $this->view->aDataImg = $aDataImg;
 
-        $this->view->aData = $aData;
+        // $this->view->aData = $aData;
+
+        $table="servicios";
+        $this->view->Carrusel = $this->_landing->Getcarrusel();
+        // Where in (12, 13, 14)
+
+        $this->view->QuienesSomos = $this->_landing->QuienesSomos();
+
 
     }
 

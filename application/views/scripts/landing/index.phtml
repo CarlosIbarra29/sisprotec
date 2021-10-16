@@ -1,4 +1,12 @@
-<style>
+<style type="text/css">
+	.carousel-inner img {
+    	
+    	width: 900px;
+    	
+    	height: 500px;
+    }
+</style>
+<!-- <style>
 
 
 	.PADDING{
@@ -456,9 +464,755 @@
 		
 	</div>
 
-</div>	
+</div>	 -->
 
 
 
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
 
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>SIS PROTEC</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/vendor.css">
+
+
+    <!-- script
+    ================================================== -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    <script src="js/blinds.js"></script>
+    <script src="js/circulo.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script defer src="js/fontawesome/all.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/3a_original.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/3a_original.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+
+</head>
+
+<body class="content" id="top">
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+        <div class="row">
+
+            <div class="s-header__logo">
+                <a href="/landing">
+                    <img src="img/Sispro (8).png" alt="Homepage">
+                </a>
+            </div>
+
+            <nav class="s-header__nav">
+                <ul>
+                    <li class="current"><a class="smoothscroll" href="#home">Inicio</a></li>
+                    <li><a class="smoothscroll" href="#quienes">Quiénes Somos</a></li>
+                    <li><a class="smoothscroll" href="#services">Servicios</a></li>
+                    <li><a class="smoothscroll" href="#productos">Productos</a></li>
+                    <li><a class="smoothscroll" href="#contact"> Contacto</a></li>
+                </ul>
+            </nav>
+
+            <a class="s-header__menu-toggle" href="#0" title="Menu">
+                <span class="s-header__menu-icon"></span>
+            </a>
+
+        </div> <!-- end row -->
+    </header> <!-- end s-header -->
+
+
+    <!-- home
+    ================================================== -->
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="img/trailer.jpg" data-natural-width="3000" data-natural-height="2000">
+
+        <div class="s-home__content">
+
+            <div class="s-home__slider">
+
+                <div class="s-home__slide s-home__slide--1">
+                    <div class="row">
+                        <div class="column large-9 medium-12 s-home__slider-text">
+                            <h2>
+                            Somos <span>SIS Protec</span>
+                            </h2>
+                            <!-- <p>
+                            	Seguridad Privada.
+                            </p> -->
+                        </div>
+
+                        <div class="column large-3  medium-12 s-home__slider-text">
+                            <!-- <div class="modal-popup__desc2" >
+                                <img src="images/formu1.png" alt="" /> 
+                                <h4 class="h-add-bottom1">Contáctanos</h4>
+
+                                <form action="">
+                                    <div>
+                                        <input class="h-full-width" style="margin-bottom: 1.8rem;" type="text" placeholder="Nombre" id="name" required="">
+                                    </div>
+                                    <div>
+                                         <input class="h-full-width"  style="margin-bottom: 1.8rem ;" type="email" placeholder="Email@mail.com" id="email" required="">
+                                    </div>
+                                    <div>
+                                        <input class="h-full-width" style="margin-bottom: 1.8rem ;" type="tel" placeholder="Teléfono" id="phone" required="">
+                                    </div>
+                                    <div>
+                                        <div class="ss-custom-select" style="margin-bottom: 1.8rem ;">
+                                            <select class="h-full-width" id="reason" required="">
+                                                <option hidden selected>Razón de Contacto</option>
+                                                <option value="Option2">Productos</option>
+                                                <option value="Option3">Servicios</option>
+                                                <option value="Option4">Otros</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <textarea class="h-full-width" style="margin-bottom: 1.8rem ; min-height: 13.3rem;" placeholder="Escribe tus dudas y comentarios." id="message" required=""></textarea>
+
+                                    <label class="h-add-bottom">
+                                        <input type="checkbox" style="margin-bottom: 1.5rem ;">
+                                        <span class="label-text">Estas de acuerdo con el Aviso de privacidad.</span>
+                                    </label>
+
+                                    <input class="btn--primary h-full-width" style="margin-bottom: 1.5rem ;" type="submit" value="Enviar">
+                                </form>
+                            </div> -->
+                        </div>
+                    </div>
+                </div> <!-- end s-home__slide -->
+
+                <div class="s-home__slide s-home__slide--2">
+                    <div class="row">
+                        <div class="column large-12 s-home__slider-text">
+                            <h3>Creamos estrategias comerciales de <span>alta efectividad</span> en beneficio de cada uno de nuestros clientes.</h3>
+                        </div>
+                    </div>
+                </div> <!-- end s-home__slide -->
+
+            </div> <!-- end s-home__slider -->
+
+        </div> <!-- end s-home__content -->
+
+        <div class="s-home__nav-arrows">
+            <div class="s-home__arrow-prev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.707 17.293L8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"/></svg>
+            </div>
+            <div class="s-home__arrow-next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11.293 17.293l1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"/></svg>
+            </div>
+        </div> <!-- end s-home__nav-arrows -->
+
+        <div class="s-home__line"></div>
+
+    </section> <!-- end s-home -->
+
+
+    <!-- nosotros
+    ================================================== -->
+    <section id="quienes" class="s-nosotros target-section s-black">
+
+        <div class="row section-head">
+            <div class="column large-5 medium-12" data-aos="fade-up">
+                <h2><?php print $this->QuienesSomos[0]['nombre'] ?></h2>
+                <p class="nos">Soluciones al instante.</p>
+              <!--   <hr class="hr_p"> -->
+                <p class="lead"><?php print $this->QuienesSomos[0]['descripcion'] ?> </p>
+                
+            </div>
+
+            <div class="column large-7 medium-12 align-x-right" data-aos="fade-up">
+                <p class="lead">
+
+                	<div id="demo" class="carousel slide" data-ride="carousel">
+                		
+                		<ul class="carousel-indicators">
+                			
+                			<li data-target="#demo" data-slide-to="0" class="active"></li>
+                			<li data-target="#demo" data-slide-to="1"></li>
+                			<li data-target="#demo" data-slide-to="2"></li>
+                		
+                		</ul>
+
+                		<div class="carousel-inner">
+                			<div class="carousel-item active">
+                				<img src="<?php print $this->Carrusel[0]['IMAGEN'] ?>" alt="" width="900" height="500">
+                			</div>
+
+                			<div class="carousel-item">
+                				<img src="<?php print $this->Carrusel[1]['IMAGEN'] ?>" alt="" width="900" height="500">
+                			</div>
+							
+							<div class="carousel-item">
+		  						<img src="<?php print $this->Carrusel[2]['IMAGEN'] ?>" alt="" width="900" height="500">
+		  					</div>
+		  				</div>
+
+		  				<a class="carousel-control-prev" href="#demo" data-slide="prev">
+		  					<span class="carousel-control-prev-icon" style="back"></span>
+		  				</a>
+
+		  				<a class="carousel-control-next" href="#demo" data-slide="next">
+		  					<span class="carousel-control-next-icon"></span>
+		  				</a>
+		  			</div>
+
+                    <!-- <video class="video-fluid z-depth-1 nosotros-video" autoplay loop controls muted>
+                        <source src="images/videos/3a.mp4" type="video/mp4" />
+                    </video> -->
+                </p>
+            </div>
+        </div> <!-- end section-head -->
+
+        <div class="row block-large-1-3 block-medium-1-2 block-tab-full nosotros-list">
+
+            <div class="column nosotros-item" data-aos="fade-up">
+                <h5>¿Qué hacemos?</h5>
+                <p>
+                Creamos estrategias eficientes como herramienta paralela de canales de comunicación y marketing para cada cliente.
+                </p>
+                <p>
+                    <img src="images/nosotros/mark_somos.png" class="img-responsive nosotros-img1"> 
+                </p>
+            </div> <!-- end services-item -->
+
+            <div class="column nosotros-item" data-aos="fade-up">
+                <h5>¿Cómo lo hacemos?</h5>
+                <p>
+                Fortalecemos la credibilidad de nuestros clientes, construyendo su reputación y generando empatía con su público objeto.
+                </p>
+                <p>
+                    <img src="images/nosotros/mark_nos.png" class="img-responsive nosotros-img1"> 
+                </p>
+            </div> <!-- end services-item -->
+
+            <div class="column align-x-center nosotros-item" data-aos="fade-up">
+                <h5>¿Por qué elegirnos?</h5>
+                <p>
+                    Retorno de inversión inmediata, reflejada en el crecimiento de ventas y el aumento en la rotación de inventarios y picos de venta.
+                </p>
+                <p>
+                    <img src="images/nosotros/mark_p.png" class="img-responsive nosotros-img1"> 
+                </p>
+            </div> <!-- end services-item -->
+
+        </div> <!-- end services-list -->
+
+    </section> <!-- end s-nosotros -->
+
+
+<!-- services
+    ================================================== -->
+    <section id="services" class="s-services target-section s-black">
+
+        <div class="row section-head">
+
+            <div class="column large-6 medium-12" data-aos="fade-up">
+                <blockquote style="border-left: 3px solid white">  
+                    <h2>Servicios</h2>
+                    <p class="ser">Marketing promocional reflejado en:</p>
+                    <p class="lead">
+                       <img src="images/servicios/digital.png" class="services-ico" >  Diversidad en nuestros productos.<br>
+                        <img src="images/servicios/digital.png" class="services-ico" />  Enfoque en resultados tangibles.<br>
+                       <img src="images/servicios/digital.png" class="services-ico" />  Atención personalizada.<br>
+                       <img src="images/servicios/digital.png" class="services-ico" />  Entrega en todo el país.
+                    </p> 
+                </blockquote>
+            </div>
+
+            <div class="column large-6 medium-12 align-x-right" data-aos="fade-up">
+                <p>
+                    <img src="images/servicios/sitio.jpg" class="img-responsive services-img"> 
+                </p>
+            </div>
+        </div> <!-- end section-head -->
+
+        <div class="row block-large-1-3 block-medium-1-2 block-tab-full services-list">
+            <div class="column services-item" data-aos="fade-up">
+                <figure class="snip1477">
+                    <img src="images/servicios/eventm.png"/>
+                    <div class="title">
+                        <div>
+                            <h2>Event</h2>
+                            <h4>Marketing</h4>
+                        </div>
+                    </div><!-- end title-->
+
+                    <figcaption>
+                        <p>
+                            Convertimos ideas en experiencias reales, interactuamos con los consumidores creando una conciencia de marca.
+                        </p>
+                    </figcaption>
+                </figure> <!-- end figure --> 
+            </div> <!-- end services-item -->
+
+            <div class="column services-item" data-aos="fade-up">
+                <figure class="snip1478">
+                    <img src="images/servicios/cel.png"/>
+                    <div class="title">
+                        <div>
+                            <h2>Impresiones</h2>
+                            <h4>3A</h4>
+                        </div>
+                    </div>
+                    <figcaption>
+                        <p>
+                            Ofrecemos una amplia variedad en acabados, grabados, bordados y tipos de impresión sobre papel en offset y digital.
+                        </p>
+                    </figcaption>
+                </figure>  
+            </div> <!-- end services-item -->
+
+            <div class="column align-x-center services-item" data-aos="fade-up">
+                <figure class="snip1477">
+                    <img src="images/servicios/stands.png"/>
+                    <div class="title">
+                        <div>
+                            <h2>Stands</h2>
+                            <h4>3A</h4>
+                        </div>
+                    </div><!-- end title-->
+
+                    <figcaption>
+                        <p>
+                            Brindamos soluciones integrales, con puntualidad, calidad y servicio personalizado.
+                        </p>
+                    </figcaption>
+                </figure> <!-- end figure --> 
+            </div> <!-- end services-item -->
+        </div> <!-- end services-list -->
+    
+
+    </section> <!-- end s-services -->
+
+
+    <!-- portfolio
+    ================================================== -->
+    <section id="productos" class="s-portfolio target-section">
+
+        <div class="row section-head">
+            <div class="column large-3 medium-12 " data-aos="fade-up">
+                <h2>Productos</h2>
+                <p class="desc">Check out our latest projects.</p>
+            </div>
+
+            <div class="column large-5 medium-12 align-x-right" data-aos="fade-up">
+                <p class="lead">
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis 
+                praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+                excepturi sint occaecati cupiditate. At vero eos et accusamus et iusto odio 
+                dignissimos ducimus qui blanditiis praesentium.
+                </p>
+            </div>
+
+            <div class="column large-4 medium-12 align-x-right" data-aos="fade-up">
+                <p class="lead">
+                <img src="images/portfolio/serigrafia.png" alt="">
+                </p>
+            </div>
+        </div> <!-- end section-head -->
+
+        <div class="row block-large-1-3 block-medium-1-2 block-mob-full folio-list">
+
+            <div class="column folio-item" data-aos="fade-up">
+                <h5>Serigrafía</h5>
+                <div class="folio-item__thumb">
+                    <img src="images/portfolio/serigrafia.png" alt="">
+                    <span class="folio-item__text">
+                        Productos de calidad.
+                    </span>
+                </div>
+            </div> <!-- end folio-item -->
+
+            <div class="column folio-item" data-aos="fade-up">
+                <h5>Grabado</h5>
+                <div class="folio-item__thumb">
+                    <img src="images/portfolio/grabado.png" alt="">
+                    <span class="folio-item__text">
+                        Mejores Precios.
+                    </span>
+                </div>
+            </div> <!-- end folio-item -->
+
+            <div class="column folio-item" data-aos="fade-up">
+                <h5>Bordado</h5>
+                <div class="folio-item__thumb">
+                    <img src="images/portfolio/bordado.png" alt="">
+                    <span class="folio-item__text">
+                        Contenido a la medida.
+                    </span>
+                </div>
+            </div> <!-- end folio-item -->
+
+            <div class="column folio-item" data-aos="fade-up">
+                <h5>Resinado</h5>
+                <div class="folio-item__thumb">
+                    <img src="images/portfolio/resinado.png" alt="">
+                    <span class="folio-item__text">
+                        Pines, llaveros y mucho más
+                    </span>
+                </div>
+            </div> <!-- end folio-item -->
+
+            <div class="column folio-item" data-aos="fade-up">
+                <h5>Arte PVC</h5>
+                <div class="folio-item__thumb">
+                    <img src="images/portfolio/pvc.png" alt="">
+                    <span class="folio-item__text">
+                      Artículos de decoración.  
+                    </span>
+                </div>
+            </div> <!-- end folio-item -->
+
+            <div class="column folio-item" data-aos="fade-up">
+                <h5>Otros</h5>
+                <div class="folio-item__thumb">
+                    <img src="images/portfolio/otras.png" alt="">
+                    <span class="folio-item__text">
+                        Variedad en técnicas.
+                    </span>
+                </div>
+            </div> <!-- end folio-item -->
+
+        </div> <!-- end folio-list -->
+
+    </section> <!-- end s-portfolio -->
+
+
+    <!-- CTA
+    ================================================== -->
+    <section class="s-cta ss-dark">
+
+        <div class="row heading-block heading-block--center" data-aos="fade-up">
+            <div class="column">
+                <h2 class="section-desc">
+                    ¿Buscas Marketing promocional?
+                </h2>
+            </div>
+        </div> <!-- end heading-block -->
+
+        <div class="row cta-content" data-aos="fade-up">
+            <div class="column">
+                <p>
+                Haz crecer tus ideas con nosotros.
+                Encuentra los mejores productos 
+                a los mejores precios.
+                Con envíos a todo la republica. 
+                </p>
+
+                <a href="https://www.3abranding.com/" target="_blank" class="btn h-full-width">Visitanos Ahora</a>
+            </div>
+        </div> <!-- end ad-content -->
+
+    </section> <!-- end s-cta -->
+
+    <!-- banner Figuras
+    ================================================== -->
+    <section>
+        <img src="images/foot1.png" >
+    </section>
+    <!-- end Figuras -->
+
+    <!-- contact
+    ================================================== -->
+    <section id="contact" class="s-contact target-section s-dark">
+
+        <div class="row section-head">
+            <div class="column large-3 medium-12">
+                <h2>Contacto</h2>
+                <p class="desc">Ponte en contacto con nosotros.</p>
+            </div>
+        </div> <!-- end section-head -->
+
+        <div class="row s-contact__content">
+
+            <div class="column large-7 medium-12">
+                <h3 class="display-1">
+                    ¿Tienes una idea o un proyecto en mente? Habla con nosotros. Trabajemos juntos y hagamos grandes cosas. Contáctanos.
+                </h3>
+
+                <div class="s-contact__email-us">
+                    <a href="#modal-contacto" class="btn btn--primary h-full-width" data-lity>Búscanos ahora.</a>
+                </div>
+
+
+        <div id="modal-contacto" class="modal-popup lity-hide">
+            <img src="images/formula.png" alt="" /> 
+                <!-- Inicio Formulario 1
+                ================================================== -->
+            <div class="modal-popup__desc">
+                <h3 class="h-add-bottom">Contáctanos</h3>
+
+                <form action="">
+                    <div>
+                        <input class="h-full-width" type="text" placeholder="Nombre" id="name" required="">
+                    </div>
+                    <div>
+                        <input class="h-full-width" type="email" placeholder="Email@mail.com" id="email" required="">
+                    </div>
+                    <div>
+                        <input class="h-full-width" type="tel" placeholder="Teléfono" id="phone" required="">
+                    </div>
+                    <div>
+                        <label for="reason">Razón de Contacto</label>
+                        <div class="ss-custom-select">
+                            <select class="h-full-width" id="reason" required="">
+                                <option value="Option1"></option>
+                                <option value="Option2">Productos</option>
+                                <option value="Option3">Servicios</option>
+                                <option value="Option4">Otros</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <label for="message">Escribe tu mensaje</label>
+                    <textarea class="h-full-width" placeholder="Escribe tus dudas y comentarios." id="message" required=""></textarea>
+
+                    <label class="h-add-bottom">
+                        <input type="checkbox">
+                        <span class="label-text">Estas de acuerdo con nuestro Aviso de privacidad.</span>
+                    </label>
+                
+                    <input class="btn--primary h-full-width" type="submit" value="Enviar">
+                </form>
+            </div>
+
+        </div>
+
+            </div>
+
+            <div class="column large-4 medium-12 s-contact__info-blocks">
+                <div class="row">
+                    <div class="column large-12 medium-6 tab-12">
+                        <div class="s-contact__info-block">
+                            
+                            <span class="s-contact__info-block-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M12 14c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2z"/><path d="M11.42 21.814a.998.998 0 001.16 0C12.884 21.599 20.029 16.44 20 10c0-4.411-3.589-8-8-8S4 5.589 4 9.995c-.029 6.445 7.116 11.604 7.42 11.819zM12 4c3.309 0 6 2.691 6 6.005.021 4.438-4.388 8.423-6 9.73-1.611-1.308-6.021-5.294-6-9.735 0-3.309 2.691-6 6-6z"/></svg>
+                            </span>
+        
+                            <h5>Encuentranos aquí</h5>
+                            <p>
+                            Las Margaritas C.P. 54050<br>
+                            Tlalnepantla de Baz, México<br>
+                            México.
+                            </p>
+                        </div> <!-- end s-contact__info-block -->
+                    </div>
+
+                    <div class="column large-12 medium-6 tab-12">
+                        <div class="s-contact__info-block">
+                            <span class="s-contact__info-block-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M17.707 12.293a.999.999 0 00-1.414 0l-1.594 1.594c-.739-.22-2.118-.72-2.992-1.594s-1.374-2.253-1.594-2.992l1.594-1.594a.999.999 0 000-1.414l-4-4a.999.999 0 00-1.414 0L3.581 5.005c-.38.38-.594.902-.586 1.435.023 1.424.4 6.37 4.298 10.268s8.844 4.274 10.269 4.298h.028c.528 0 1.027-.208 1.405-.586l2.712-2.712a.999.999 0 000-1.414l-4-4.001zm-.127 6.712c-1.248-.021-5.518-.356-8.873-3.712-3.366-3.366-3.692-7.651-3.712-8.874L7 4.414 9.586 7 8.293 8.293a1 1 0 00-.272.912c.024.115.611 2.842 2.271 4.502s4.387 2.247 4.502 2.271a.991.991 0 00.912-.271L17 14.414 19.586 17l-2.006 2.005z"/></svg>
+                            </span>
+        
+                            <h5>Saludanos.</h5>
+                            <p>
+                            contacto@3abranding.com <br>
+                            (55) 7090 8638 <br>
+                            (55) 7090 8639
+                            </p>
+                        </div> <!-- end s-contact__info-block -->
+                    </div>
+                </div> <!-- end row -->
+            </div> <!-- end s-contact__info-blocks -->
+
+        </div> <!-- end s-contact__content -->
+
+    </section> <!-- end s-contact -->
+
+    <!-- footer
+    ================================================== -->
+    <footer class="s-footer">
+        <div class="row">
+            <div class="column large-4 medium-6 w-1000-stack s-footer__social-block">
+                <ul class="s-footer__social">
+                    <li><a target="_blank" href="https://www.facebook.com/3ABranding"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                    <li><a target="_blank" href="https://www.twitter.com/3ABrandingG"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a target="_blank" href="https://www.instagram.com/3a_branding"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="#0"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+                    <li><p style="font-size: 15px;"><a href="#modal-aviso" class="h-full-width" data-lity>Aviso de Privacidad.</a></p></li>
+                </ul>
+            </div>          
+
+            <div class="column large-7 medium-6 w-1000-stack ss-copyright">
+                <span>© Copyright 2020</span> 
+                <span>Design by <a href="https://www.referentedigital.com/">Referente Digital</a></span>
+            </div>
+        </div>
+
+        <div class="ss-go-top1">
+            <a target="_blank" title="whatsApp" name="whatsapp"  href="https://api.whatsapp.com/send?phone=5215567919161&text=3A Branding, ¿Pueden Ayudarme?" >
+                <svg viewBox="0 0 32 32" class="whatsapp-ico">
+                    <path d=" M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z" fill-rule="evenodd">   
+                    </path>
+                </svg>
+            </a>
+        </div> <!-- end whatsapp-->
+
+        <div class="ss-go-top">
+            <a class="smoothscroll" title="Ir al inicio" href="#top">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M6 4h12v2H6zm5 10v6h2v-6h5l-6-6-6 6z"/>
+                </svg>
+            </a>
+        </div>  
+        <!-- end ss-go-top-->
+
+         <!-- Inicio Modal Aviso
+                ================================================== -->
+        <div id="modal-aviso" style="max-width: 750px;" class="modal-popup lity-hide">
+            <img src="images/aviso.png" alt="" /> 
+            
+            <div class="modal-popup__desc1">
+                <center><h3 class="h-add-bottom"><b>Aviso de Privacidad.</b></h3><img  src="images/3a_original.png" style="height: 50px;" alt="logo" title="logo"/></center>
+                    <p style="color: red;">
+                        Usted expresamente acepta esta Política de Privacidad al registrarse, acceder a, navegar por, o utilizar nuestros productos, contenido, funcionalidades, tecnología o funciones disponibles en nuestro sitio web <b style="color: red;">www.3abranding.com</b>
+
+                    </p>
+                    <p>
+                        <b>ARTÍCULOS PROMOCIONALES 3A BRANDING GROUP S.A. DE C.V</b>, con nombre comercial 3A Branding, con Domicilio Fiscal en Las Margaritas C.P. 54050 Tlalnepantla de Baz, México, México, es responsable del tratamiento de los datos personales recabados en este sitio web y suscribe el presente aviso de privacidad en cumplimiento con la Ley Federal de Protección de Datos Persona les en Posesión de los Particulares, con fundamento en los Artículos 15 y 16.
+                    </p>
+                    <p>
+                        Los datos personales que usted nos ha proporcionado directamente o a través de medios electrónicos, han sido recabados y serán tratados por <b>3A Branding</b>, bajo los principios de licitud, consentimiento, información, calidad, finalidad, lealtad, proporcionalidad y por la Ley Federal de Protección de Datos Persona les en Posesión de los Particulares.
+                    </p>
+                    <p>
+                        Los datos personales proporcionados a <b>3A Branding</b> se encontrarán debidamente protegidos a través de medidas de seguridad tecnológica, física y administrativa, previniendo el uso o divulgación indebida de los mismos.
+                    </p>
+                    <p style="color: red;">
+                      <b> ¿Para qué fines recabamos y utilizamos sus datos personales? </b>
+                    </p>
+                    <p>
+                        La información que nos proporciona será utilizada para las siguientes finalidades:
+                    </p>
+                    <ul>
+                        <li>Seguimiento a solicitudes de información sobre los servicios y/o productos que nuestra empresa oferta por medio de nuestro sitio web u otros medios.</li>
+                        <li>Proveer los servicios y productos que ha solicitado.</li>
+                        <li>Elaboración de estudios de mercado necesarios para determinar hábitos de consumo.</li>
+                        <li>Realización de evaluaciones de calidad y servicio periódicas de nuestros productos y/o servicios a efecto de mejorar la calidad de los mismos.</li>
+                        <li>Comunicar sus datos como cliente potencial a nuestra red de Distribuidores y socios comerciales.</li>
+                        <li>Realizar cotizaciones y enviarle propuestas de trabajo en base a la información que nos proporciona mediante los formularios del sitio web, correo electrónico u otros medios.</li>
+                        <li>Dar avisos urgentes o importantes sobre algún tema relacionado con nuestro sitio web, servicios y/o productos contratados con nuestra empresa.</li>
+                        <li>Proveer información sobre el estado actual de nuestra empresa.</li>
+                        <li>Realizar los servicios y/o entregar los productos que usted contrato con nuestra empresa.</li>
+                        <li>Informar sobre cambios y nuevos productos y/o servicios que estén relacionados con el/los contratado(s) o adquirido(s) por el Cliente.</li>
+                        <li>Dar cumplimiento a obligaciones contraídas con nuestros Clientes.</li>
+                        <li>Y en general, para cumplir con las obligaciones que hemos adquirido con usted.</li>
+
+                    </ul>
+                    <p>
+                      Su información se mantendrá en nuestros registros a partir de la fecha en que nos proporcionó sus datos y/o fue autorizada su alta como Cliente, por lo que si desea terminar la relación comercial con <b>3A Branding</b>, es necesario que nos envíe vía correo electrónico su petición de revocación de nuestra base de datos y/o de su información de registro, al correo: <b>contacto@3abranding.com.mx</b>   
+                    </p>
+                    <p style="color: red;">
+                        <b>¿Qué datos personales obtenemos y de dónde?</b>
+                    </p>
+                    <p>
+                        Para las finalidades señaladas en el presente aviso de privacidad, podemos recabar sus datos persona les de distintas formas: (I) cuando visita nuestro sitio web <b>www.3abranding.com</b>, (II)  cuando  usted  nos  los  proporciona  directamente  información en el formulario de contacto, ( III) cuando utiliza nuestros servicios en línea, (IV) al acudir a nuestros stands en las ferias y exposiciones a las que participamos, y (V) cuando obtenemos información a través de otras fuentes que están permitidas por la ley.
+                    </p>
+                    <p>Los datos que obtenemos de forma directa son:</p>
+                    <ul>
+                        <li>Nombre Completo</li>
+                        <li>Teléfono Celular u Oficina</li>
+                        <li>Correo electrónico</li>
+                        <li>Nombre empresa o negocio</li>
+                        <li>Razón social.</li>
+                        <li>Giro de su negocio.</li>
+
+                    </ul>
+
+                    <p>Nuestro sitio web utiliza como herramientas de Analítica las plataformas de Google Analytics y Google Ads.</p>
+
+                    <p>La información recopilada en el sitio web puede ser utilizada por proveedores de terceros como:</p>
+                    <ul>
+                        <li>Google</li>
+                        <li>Doppler – plataforma especializada en el envío de boletines    </li>
+                    </ul>
+
+                    <p>Al momento de solicitar una cotización, almacenamos la información personal que nos proporcionan durante un tiempo máximo de 4 meses. Puedes solicitar que eliminemos cualquier dato personal que tengamos sobre ti. Esto no incluye ningún dato que estemos obligados a conservar con fines administrativos, legales o de seguridad. Los administradores de la web también pueden ver, eliminar y editar esa información.</p>
+                    
+                    <p style="color: red;">
+                       <b> Datos personales que recabamos a través de otras fuentes.</b>
+                    </p>
+                    <p>
+                        Podemos obtener información de usted de otras fuentes permitidas por la ley, tales como los directorios telefónicos o laborales. Los datos que obtenemos por estos medios pueden ser, entre otros: Información extraída de Directorios Telefónicos o Empresariales por nuestra área de Ventas y Mercadotecnia para realizar tareas de Marketing.
+                    </p>
+                    <p style="color: red;">
+                        <b>Datos personales sensibles.</b>
+                    </p>
+                    <p>
+                        Los servicios ofrecidos por nuestra empresa no requieren información sensible.
+                    </p>
+                    <p style="color: red;">
+                        <b>Derechos ARCO.</b>
+                    </p>
+                    <p>
+                        Conforme a la Ley Federal de Protección de Datos Personales en Posesión de Particulares, son los derechos que toda persona puede ejercer en relación con el tratamiento de sus datos personales. Cada sigla representa un derecho diferente y son Acceso, Rectificación, Cancelación y Oposición.
+                    </p>
+                        
+                    <p>
+                        Es importante informarle que usted tiene derecho al Acceso, Rectificación y Cancelación de sus datos personales, a Oponerse al tratamiento de los mismos o a revocar el consentimiento que para dicho fin nos haya otorgado. Para ello, es necesario que envíe la solicitud en los términos que marca la Ley en su Artículo 29 al Departamento de Facturación, responsable de nuestro Departamento de Protección de Datos Personales, ubicado en Las Margaritas C.P. 54050 Tlalnepantla de Baz, México, o bien, se comunique al teléfono 55 7090 8638 o 55 7090 8639 o vía correo electrónico a factura@3abranding.com, el cual solicitamos confirme vía telefónica para garantizar su correcta recepción en un plazo máximo de 30 días naturales atenderemos su petición y le informaremos sobre el status de este, en el correo proporcionado por usted. 
+                    </p>
+
+                    <p style="color: red;">
+                        <b>Modificaciones al aviso de privacidad.</b>
+                    </p>
+
+                    <p>Podemos modificar esta Política de Privacidad en cualquier momento para la atención de novedades legislativas, políticas internas o nuevos requerimientos para la prestación u ofrecimiento de nuestros servicios o productos. Las modificaciones estarán disponibles al público mediante:</p>
+
+                    <ul>
+                        <li>Nuestro sitio web www.3abranding.com  (sección aviso de privacidad).</li>
+                        <li>Se las haremos llegar al último correo electrónico que nos haya proporcionado.</li>
+                    </ul>
+                    
+                    <p>La versión actualizada entrará en vigor 30 días naturales posteriores a su publicación o al envió de la notificación por correo electrónico. Transcurrido este período de notificación de 30 días naturales, se considerará que usted ha aceptado expresamente todos los cambios realizados por cuanto al Aviso de Privacidad.</p>
+
+                     <p style="color: red;">
+                        <b>Responsable de la Privacidad de los Datos.</b>
+                    </p>
+                    
+                    <p>Si tiene alguna duda, pregunta o queja, puede comunicarse con nuestro equipo de contacto al cliente al correo <b>contacto@3abranding.com.mx</b>, todas sus preguntas serán respondidas.</p>
+
+                    <p>
+                        Si usted considera que su derecho de protección de datos personales ha sido lesionado por alguna conducta de nuestros colaboradores o de nuestras actuaciones o respuestas, presume que en el tratamiento de sus datos personales existe alguna violación a las disposiciones previstas en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, podrá interponer la queja o denuncia correspondiente ante el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales (IFAI), para mayor información visite www.ifai.org.mx.
+                    </p>
+
+                    <p><b style="color: red;">Fecha última actualización:</b> <b>25  de Agosto de 2020.</b></p>
+            </div>
+        </div>
+        <!-- End Modal Aviso
+                ================================================== -->
+    </footer>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
 

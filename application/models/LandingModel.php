@@ -155,5 +155,43 @@ class Application_Model_LandingModel extends Zend_Db_Table_Abstract{
     }
 
 
+    public function Getcarrusel(){
+        try {
+        
+            $db = Zend_Db_Table::getDefaultAdapter();
+            $sql = "SELECT A.imagen as IMAGEN, A.nombre as TEXTO_TITULO, A.descripcion AS TEXTO , A.color as COLOR 
+                    FROM servicios A  WHERE A.tpo_seccion = 2";
+            $qry = $db->query( $sql );      
+            $row = $qry->fetchAll();
+            $db->closeConnection();
+            
+            return $row;
+        
+        } catch (Exception $e) {
+        
+            echo $e;
+        
+        }
+    }
+
+
+    public function QuienesSomos(){
+        try {
+        
+            $db = Zend_Db_Table::getDefaultAdapter();
+            $sql = "SELECT * FROM servicios  WHERE id in (1)";
+            $qry = $db->query( $sql );      
+            $row = $qry->fetchAll();
+            $db->closeConnection();
+            
+            return $row;
+        
+        } catch (Exception $e) {
+        
+            echo $e;
+        
+        }
+    }
+
 
 }
