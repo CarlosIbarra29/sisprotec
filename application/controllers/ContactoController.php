@@ -102,5 +102,71 @@ class ContactoController extends Zend_Controller_Action{
         $this->view->info_correo= $this->_contacto->Getbandejaid($id);
     }
 
+    public function descargacorreoAction(){
+        $id=$this->_getParam('id');
+        $this->view->id_correo=$id;
+        $this->view->info_correo= $this->_contacto->Getbandejaid($id);    
+    }
+
+    public function requestleidoAction(){
+        $this->_helper->layout()->disableLayout();
+        $this->_helper->viewRenderer->setNoRender(true);
+        $post = $this->getRequest()->getPost();
+      
+        if($this->getRequest()->getPost()){
+            
+            if($post['op'] == 0){
+                $op = 1;
+            }else{
+                $op = 0;
+            }
+
+            $result = $this->_contacto->updatelido($post,$op);
+
+            if ($result) {
+                return $this-> _redirect('/contacto/bandeja');
+            }else{
+                print '<script language="JavaScript">'; 
+                print 'alert("Ocurrio un error: Comprueba los datos.");'; 
+                print '</script>'; 
+            }
+        }
+
+    }
+
+
+    public function requestimportanteAction(){
+        $this->_helper->layout()->disableLayout();
+        $this->_helper->viewRenderer->setNoRender(true);
+        $post = $this->getRequest()->getPost();
+      
+        $table="contacto";
+        $wh="id";
+        $id = $post['id'];
+        $contacto = $this->_season->GetSpecific($table,$wh,$id);
+
+        if($this->getRequest()->getPost()){
+
+            if($contacto[0]['status_imp'] == 0){
+                $op_leido = 1;
+                $op_imp = 1;
+            }else{
+                $op_leido = 0;
+                $op_imp = 0;
+            }
+
+            $result = $this->_contacto->updateimportante($post,$op_leido,$op_imp);
+
+            if ($result) {
+                return $this-> _redirect('/contacto/bandeja');
+            }else{
+                print '<script language="JavaScript">'; 
+                print 'alert("Ocurrio un error: Comprueba los datos.");'; 
+                print '</script>'; 
+            }
+        }
+    }
+
+
 
 }

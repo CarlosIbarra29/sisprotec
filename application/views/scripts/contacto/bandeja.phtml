@@ -80,6 +80,12 @@
     color: rgb(169,68,66);
     font-weight: 350;
   }
+  .st-btn{
+    background-color: black; 
+    color: #ffd700;
+  }
+
+  
 </style>
 
 <?php 
@@ -176,7 +182,7 @@
                     </td>
 
                     <td class="text-center">
-                      <a href="/contacto/bandejadetail/id/<?php echo $usr["id"] ?>"><i class="fa fa-2x fa-id-card-o"></i></a>
+                      <a href="/contacto/bandejadetail/id/<?php echo $usr["id"] ?>" class="st-btn btn  modal-trigger"><i class="fa fa-2x fa-id-card-o"></i></a>
                     </td>
                   </tr>
                   <?php } }else{ ?>

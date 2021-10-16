@@ -1,56 +1,393 @@
+<style type="text/css">
+	.img-slider{
+		width: 90px;
+		height: 170px;
+	}
 
-<div style="padding: 5%;">
+  	.st-btn{
+	    background-color: black; 
+	    color: #ffd700;
+  	}
 
-<h3><b>Secciones</b></h3>
+</style>
 
-<table>
-	
-	<thead>
-	
-	  <tr>
-	
-	      <th>Titulos</th>
-	
-	      <th>Texto</th>
-	
-	      <th>Color</th>
 
-	      <th>Editar</th>
-	
-	  </tr>
-	
-	</thead>
-
-	<tbody>
-
-		<?php foreach ($this->aData as $k => $v):?>
-	
-	  		<tr>  	
-		
-			    <td><?php print $v['TEXTO_TITULO'] ?></td>
-
-			    <td><?php print $v['TEXTO'] ?></td>
-
-			    <td>
-
-			    	<i class="small material-icons" style="color: <?php print $v['COLOR'] ?>;">brightness_1</i>
-
-			    </td>
-
-			    <td>
-
-			    	<a href="/quienes/update?catId=<?php echo $v['ID_SECCION'];?>" class="btn-floating btn-small "><i class="large material-icons">mode_edit</i></a>
-
-			    </td>
-	  		</tr>
-
-	  <?php endforeach;?>
-
-	</tbody>
-
-</table>
-
+<div class="row" style="margin-top: 20px;">
+    <div class="col m12 s12 text-center">
+      <span style="font-size:30px; color: rgb(74,79,84); letter-spacing: 0.1em; font-weight: bold;">Principal</span>
+    </div>
 </div>
-            
 
-            
+<?php foreach ($this->quienessomos as $usr) { 
+	$nombre_quienes = $usr['nombre'];
+	$descripcion = $usr['descripcion'];
+	$imagen = $usr['imagen'];
+} ?>
+
+<!-- M O D A L   Q U I E N E S   S O M O S -->
+  	<div id="modal1" class="modal modal-fixed-footer">
+	    <div class="modal-content">
+	    	<span style="font-size:20px; color: rgb(74,79,84); letter-spacing: 0.1em; font-weight: bold;">Modificar Sección - Quienes Somos</span>
+	    	
+	    	<form action="/quienes/requestaupdatequienes" method="POST" enctype="multipart/form-data" class="form-horizontal form-material" id="submit_quienessomos">
+		    	<div class="row" style="margin-top: 20px;">
+		    		<div class="col m12 s12">
+		    			<label>Descripción</label>
+				        <div class="input-field col s12">
+	                        <textarea class="" id="descr" rows="100" cols="100"  name="desc"><?php echo $descripcion; ?></textarea>
+	                        <script type="text/javascript">CKEDITOR.replace( 'descr',{ height : 100, });</script> 
+				        </div>
+		    		</div>
+		    	</div> 
+	    	</form>
+	    </div>
+	    <div class="modal-footer">
+	    	<a href="#!" class="modal-close st-btn btn">Cancelar</a>
+	    	<a id="upd_quienes" class="st-btn btn">Guardar</a>
+	    </div>
+  	</div>
+
+ <!-- M O D A L   S L I D E R -->
+  	<div id="modal2" class="modal modal-fixed-footer">
+	    <div class="modal-content">
+	    	<span style="font-size:20px; color: rgb(74,79,84); letter-spacing: 0.1em; font-weight: bold;">Modificar Sección - Slider</span>
+	    <form action="/quienes/requestaupdateslider" method="POST" enctype="multipart/form-data" class="form-horizontal form-material" id="submit_slider">
+	    	<div class="row" style="margin-top: 20px;">
+	    		<div class="col m6 s6">
+				    <div class="file-field input-field">
+				      	<div class="btn">
+				        	<span>Imagen 1</span>
+				        	<input type="file" name="file_uno">
+				      	</div>
+					    <div class="file-path-wrapper">
+					        <input class="file-path validate" name="url_uno" value="<?php echo $this->slider[0]['imagen'] ?>" type="text">
+					    </div>
+				    </div>
+	    		</div>
+	    		<div class="col m6 s6 text-center">
+	    			<img src="/<?php echo $this->slider[0]['imagen'] ?>" width="140" heigh ="70">
+	    		</div>
+	    	</div> 
+	    	<hr>
+
+	    	<div class="row">
+	    		<div class="col m6 s6">
+				    <div class="file-field input-field">
+				      	<div class="btn">
+				        	<span>Imagen 2</span>
+				        	<input type="file" name="file_dos">
+				      	</div>
+					    <div class="file-path-wrapper">
+					        <input class="file-path validate" name="url_dos" value="<?php echo $this->slider[1]['imagen'] ?>" type="text">
+					    </div>
+				    </div>
+	    		</div>
+	    		<div class="col m6 s6 text-center">
+	    			<img src="/<?php echo $this->slider[1]['imagen'] ?>" width="140" heigh ="70">
+	    		</div>
+	    	</div>
+	    	<hr>
+	    	<div class="row">
+	    		<div class="col m6 s6">
+				    <div class="file-field input-field">
+				      	<div class="btn">
+				        	<span>Imagen 3</span>
+				        	<input type="file" name="file_tres">
+				      	</div>
+					    <div class="file-path-wrapper">
+					        <input class="file-path validate" name="url_tres" value="<?php echo $this->slider[2]['imagen'] ?>" type="text">
+					    </div>
+				    </div>
+	    		</div>
+	    		<div class="col m6 s6 text-center">
+	    			<img src="/<?php echo $this->slider[2]['imagen'] ?>" width="140" heigh ="70">
+	    		</div>
+	    	</div>
+	    </form>
+	    </div>
+	    <div class="modal-footer">
+	    	<a href="#!" class="modal-close st-btn btn">Cancelar</a>
+	    	<a id="upd_slider" class="st-btn btn">Guardar</a>
+	    </div>
+  	</div>
+
+<!-- M O D A L   M I SI O N -->
+  	<div id="modal3" class="modal modal-fixed-footer">
+	    <div class="modal-content">
+	    	<span style="font-size:20px; color: rgb(74,79,84); letter-spacing: 0.1em; font-weight: bold;">Modificar Sección - MISIÓN </span>
+	    	<form action="/quienes/requestupdsteseccion" method="POST" enctype="multipart/form-data" class="form-horizontal form-material" id="submit_mision">
+		    	<div class="row" style="margin-top: 20px;">
+		    		<input type="hidden" name="id" value="15">
+		    		<div class="col m12 s12">
+		    			<label>Descripción</label>
+				        <div class="input-field col s12">
+	                        <textarea class="" id="mision" rows="100" cols="100"  name="mision"><?php echo $this->seccion[0]['descripcion'] ?></textarea>
+	                        <script type="text/javascript">CKEDITOR.replace( 'mision',{ height : 100, });</script>
+				        </div>
+		    		</div>
+		    	</div> 
+		    	<hr>
+		    	<div class="row">
+		    		<div class="col m6 s6">
+					    <div class="file-field input-field">
+					      	<div class="btn">
+					        	<span>Imagen Misión</span>
+					        	<input type="file" name="file_mision">
+					      	</div>
+						    <div class="file-path-wrapper">
+						        <input class="file-path validate" name="url_mision" value="/<?php echo $this->seccion[0]['imagen'] ?>" type="text">
+						    </div>
+					    </div>
+		    		</div>
+		    		<div class="col m6 s6 text-center">
+		    			<img src="/<?php echo $this->seccion[0]['imagen'] ?>" width="140" heigh ="70">
+		    		</div>	    	
+		    	</div>
+	    	</form>
+	    </div>
+	    <div class="modal-footer">
+	    	<a href="#!" class="modal-close st-btn btn">Cancelar</a>
+	    	<a id="add_mision" class="st-btn btn">Guardar</a>
+	    </div>
+  	</div>
+
+
+<!-- M O D A L   V I S I O N -->
+  	<div id="modal4" class="modal modal-fixed-footer">
+	    <div class="modal-content">
+	    	<span style="font-size:20px; color: rgb(74,79,84); letter-spacing: 0.1em; font-weight: bold;">Modificar Sección - VISIÓN </span>
+	    	<form action="/quienes/requestupdsteseccion" method="POST" enctype="multipart/form-data" class="form-horizontal form-material" id="submit_vision">
+	    		<input type="hidden" name="id" value="16">
+		    	<div class="row" style="margin-top: 20px;">
+		    		<div class="col m12 s12">
+		    			<label>Descripción</label>
+				        <div class="input-field col s12">
+	                        <textarea class="" id="vision" rows="100" cols="100"  name="vision"><?php echo $this->seccion[1]['descripcion'] ?></textarea>
+	                        <script type="text/javascript">CKEDITOR.replace( 'vision',{ height : 100, });</script>
+				        </div>
+		    		</div>
+		    	</div> 
+		    	<hr>
+		    	<div class="row">
+		    		<div class="col m6 s6">
+					    <div class="file-field input-field">
+					      	<div class="btn">
+					        	<span>Imagen Visión</span>
+					        	<input type="file" name="file_vision">
+					      	</div>
+						    <div class="file-path-wrapper">
+						        <input class="file-path validate" name="url_vision" value="/<?php echo $this->seccion[1]['imagen'] ?>" type="text">
+						    </div>
+					    </div>
+		    		</div>
+		    		<div class="col m6 s6 text-center">
+		    			<img src="/<?php echo $this->seccion[1]['imagen'] ?>" width="140" heigh ="70">
+		    		</div>	    	
+		    	</div>
+	    	</form>	
+	    </div>
+	    <div class="modal-footer">
+	    	<a href="#!" class="modal-close st-btn btn">Cancelar</a>
+	    	<a id="add_vision" class="st-btn btn">Guardar</a>
+	    </div>
+  	</div>
+
+
+<!-- M O D A L   V A L O R E Ss -->
+  	<div id="modal5" class="modal modal-fixed-footer">
+	    <div class="modal-content">
+	    	<span style="font-size:20px; color: rgb(74,79,84); letter-spacing: 0.1em; font-weight: bold;">Modificar Sección - VALORES </span>
+	    	<form action="/quienes/requestupdsteseccion" method="POST" enctype="multipart/form-data" class="form-horizontal form-material" id="submit_valores">
+	    		<input type="hidden" name="id" value="17">
+	    	<div class="row" style="margin-top: 20px;">
+	    		<div class="col m12 s12">
+	    			<label>Descripción</label>
+			        <div class="input-field col s12">
+                        <textarea class="" id="valores" rows="100" cols="100"  name="valores"><?php echo $this->seccion[2]['descripcion'] ?></textarea>
+                        <script type="text/javascript">CKEDITOR.replace( 'valores',{ height : 100, });</script>
+			        </div>
+	    		</div>
+	    	</div> 
+	    	<hr>
+	    	<div class="row">
+	    		<div class="col m6 s6">
+				    <div class="file-field input-field">
+				      	<div class="btn">
+				        	<span>Imagen Valores</span>
+				        	<input type="file" name="file_valores">
+				      	</div>
+					    <div class="file-path-wrapper">
+					        <input class="file-path validate" name="url_valores" value="/<?php echo $this->seccion[2]['imagen'] ?>" type="text">
+					    </div>
+				    </div>
+	    		</div>
+	    		<div class="col m6 s6 text-center">
+	    			<img src="/<?php echo $this->seccion[2]['imagen'] ?>" width="140" heigh ="70">
+	    		</div>	    	
+	    	</div>
+	    	</form>
+	    </div>
+	    <div class="modal-footer">
+	    	<a href="#!" class="modal-close st-btn btn">Cancelar</a>
+	    	<a id="add_valores" class="st-btn btn">Guardar</a>
+	    </div>
+  	</div>
+
+
+<div class="row">
+    <div class="col s12 m6">
+      	<div class="card">
+	        <div class="card-content">
+	        	<div class="row">
+	        		<div class="col-md-12 text-right">
+	        			<a href="">
+	        				<a href="#modal1" class="st-btn btn  modal-trigger"><i class="material-icons">edit</i></a>
+	        			</a>
+	        		</div>
+	        	</div>
+		      	<table>
+			        <thead>
+			          <tr>
+			              <th>Sección</th>
+			              <th>Descripción</th>
+			              <th></th>
+			          </tr>
+			        </thead>
+			        <tbody>
+			          <tr>
+			            <td><?php echo $nombre_quienes; ?></td>
+			            <td><?php echo $descripcion; ?></td>
+			          </tr>
+			        </tbody>
+		      	</table>
+	        </div>
+      	</div>
+    </div>
+
+    <div class="col s12 m6">
+      	<div class="card">
+	        <div class="card-content">
+
+	        	<div class="row">
+	        		<div class="col-md-12 text-right">
+						<a href="#modal2" class="st-btn btn  modal-trigger"><i class="material-icons">edit</i></a>
+	        		</div>
+	        	</div>
+
+				<div class="carousel carousel-slider">
+				    <a class="carousel-item" href="#one!"><img src="/<?php echo $this->slider[0]['imagen'] ?>" class="img-slider"></a>
+				    <a class="carousel-item" href="#two!"><img src="/<?php echo $this->slider[1]['imagen'] ?>" class="img-slider"></a>
+				    <a class="carousel-item" href="#three!"><img src="/<?php echo $this->slider[2]['imagen'] ?>" class="img-slider"></a>
+			  	</div>
+	        </div>
+      	</div>
+    </div>
+</div>
+
+
+
+  	<div class="row">
+	    <div class="col s12 m12">
+	      	<div class="card">
+		        <div class="card-content">
+			      	<table>
+				        <thead>
+				          <tr>
+				              <th>Sección</th>
+				              <th>Descripción</th>
+				              <th>Imagen</th>
+				              <th></th>
+				          </tr>
+				        </thead>
+				        <tbody>
+				          <tr>
+				            <td>MISIÓN</td>
+				            <td><?php echo $this->seccion[0]['descripcion'] ?></td>
+				            <td><img src="/<?php echo $this->seccion[0]['imagen'] ?>" width="140" heigh ="70"></td>
+				            <td><a href="#modal3" class="st-btn btn  modal-trigger"><i class="material-icons">edit</i></a></td>
+				          </tr>
+
+				          <tr>
+				            <td>VISIÓN</td>
+				            <td><?php echo $this->seccion[1]['descripcion'] ?></td>
+				            <td><img src="/<?php echo $this->seccion[1]['imagen'] ?>" width="140" heigh ="70"></td>
+				            <td><a href="#modal4" class="st-btn btn  modal-trigger"><i class="material-icons">edit</i></a></td>
+				          </tr>
+
+				          <tr>
+				            <td>VALORES</td>
+				            <td><?php echo $this->seccion[2]['descripcion'] ?></td>
+				            <td><img src="/<?php echo $this->seccion[2]['imagen'] ?>" width="140" heigh ="70"></td>
+				            <td><a href="#modal5" class="st-btn btn  modal-trigger"><i class="material-icons">edit</i></a></td>
+				          </tr>
+
+				        </tbody>
+			      	</table>
+		        </div>
+	      	</div>
+	    </div>
+
+  	</div>
+
+
+<script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript">
+  	$(document).ready(function(){
+    	$('.modal').modal();
+  	});
+
+ 	$('.carousel.carousel-slider').carousel({
+    	fullWidth: true
+  	});
+
+  	$("#upd_quienes").click(function(){
+		swal({
+			text: "Espere un momento, su información esta siendo procesada!",
+			icon: "success",
+			button: false,
+		});
+
+		document.getElementById("submit_quienessomos").submit();
+  	});
+
+  	$("#upd_slider").click(function(){
+		swal({
+			text: "Espere un momento, su información esta siendo procesada!",
+			icon: "success",
+			button: false,
+		});
+
+		document.getElementById("submit_slider").submit();
+  	});
+
+  	$("#add_valores").click(function(){
+		swal({
+			text: "Espere un momento, su información esta siendo procesada!",
+			icon: "success",
+			button: false,
+		});
+
+		document.getElementById("submit_valores").submit();
+
+  	});
+
+  	$("#add_vision").click(function(){
+		swal({
+			text: "Espere un momento, su información esta siendo procesada!",
+			icon: "success",
+			button: false,
+		});
+
+		document.getElementById("submit_vision").submit();
+  	});
+
+  	$("#add_mision").click(function(){
+		swal({
+			text: "Espere un momento, su información esta siendo procesada!",
+			icon: "success",
+			button: false,
+		});
+
+		document.getElementById("submit_mision").submit();
+  	});
+</script>

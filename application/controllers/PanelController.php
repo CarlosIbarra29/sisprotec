@@ -38,9 +38,60 @@ class PanelController extends Zend_Controller_Action{
             $this->redirect('/home/login');
         }
         
+       $this->view->correos = $this->_season->correospendientes();
+
+        $year=$this->_getParam('year');
+        $this->view->year_op = $year;
+
+        $month = "1";
+        $enero = $this->view->enero=$this->_season->mesgrafica($month, $year);
+        $this->view->count_enero=count($enero);
+        
+        $month = "2";
+        $febrero = $this->view->febrero=$this->_season->mesgrafica($month, $year);
+        $this->view->count_febrero=count($febrero);
+
+        $month = "3";
+        $marzo = $this->view->marzo=$this->_season->mesgrafica($month, $year);
+        $this->view->count_marzo=count($marzo);
+
+        $month = "4";
+        $abril = $this->view->abril=$this->_season->mesgrafica($month, $year);
+        $this->view->count_abril=count($abril);
+
+        $month = "5";
+        $mayo = $this->view->mayo=$this->_season->mesgrafica($month, $year);
+        $this->view->count_mayo=count($mayo);
+        
+        $month = "6";
+        $junio = $this->view->junio=$this->_season->mesgrafica($month, $year);
+        $this->view->count_junio=count($junio);
+
+        $month = "7";
+        $julio = $this->view->julio=$this->_season->mesgrafica($month, $year);
+        $this->view->count_julio=count($julio);
+
+        $month = "8";
+        $agosto = $this->view->agosto=$this->_season->mesgrafica($month, $year);
+        $this->view->count_agosto=count($agosto);
+
+        $month = "9";
+        $septiembre = $this->view->septiembre=$this->_season->mesgrafica($month, $year);
+        $this->view->count_septiembre=count($septiembre);
+
+        $month = "10";
+        $octubre = $this->view->octubre=$this->_season->mesgrafica($month, $year);
+        $this->view->count_octubre=count($octubre);
+
+        $month = "11";
+        $noviembre = $this->view->noviembre=$this->_season->mesgrafica($month, $year);
+        $this->view->count_noviembre=count($noviembre);
+
+        $month = "12";
+        $diciembre = $this->view->diciembre=$this->_season->mesgrafica($month, $year);
+        $this->view->count_diciembre=count($diciembre);
 
      }//END INDEX
-
 
 
     public function loginAction(){

@@ -47,4 +47,35 @@ class Application_Model_GpsContactoModel extends Zend_Db_Table_Abstract{
         }
     }
 
+    public function updatelido($post,$op){
+        try {
+            $db = Zend_Db_Table::getDefaultAdapter();
+            $qry = $db->query("UPDATE contacto SET status_leido = ? WHERE id = ?",array(
+                $op,
+                $post['id']));
+            $db->closeConnection();               
+            return $qry;
+        } 
+        catch (Exception $e) {
+            echo $e;
+        }
+    }// END UPDATE SERVICIO
+
+
+    public function updateimportante($post,$op_leido,$op_imp){
+        try {
+            $db = Zend_Db_Table::getDefaultAdapter();
+            $qry = $db->query("UPDATE contacto SET status_leido = ?, status_imp = ? WHERE id = ?",array(
+                $op_leido,
+                $op_imp,
+                $post['id']));
+            $db->closeConnection();               
+            return $qry;
+        } 
+        catch (Exception $e) {
+            echo $e;
+        }
+    }// END UPDATE SERVICIO
+
+
 }

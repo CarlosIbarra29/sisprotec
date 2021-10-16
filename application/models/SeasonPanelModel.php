@@ -333,4 +333,71 @@ class Application_Model_SeasonPanelModel extends Zend_Db_Table_Abstract{
             echo $e;
         }
     } 
+
+    public function quienessomos(){
+         try {
+            $db = Zend_Db_Table::getDefaultAdapter();
+            $qry = $db->query("SELECT * FROM servicios where id = 1");
+            $row = $qry->fetchAll();
+            $db->closeConnection();
+            return $row;
+        } catch (Exception $e) {
+            echo $e;
+        } 
+    }
+
+    public function sliderprincipal(){
+         try {
+            $db = Zend_Db_Table::getDefaultAdapter();
+            $qry = $db->query("SELECT * FROM servicios where id IN (12, 13, 14)");
+            $row = $qry->fetchAll();
+            $db->closeConnection();
+            return $row;
+        } catch (Exception $e) {
+            echo $e;
+        } 
+    }
+
+    public function secciones(){
+         try {
+            $db = Zend_Db_Table::getDefaultAdapter();
+            $qry = $db->query("SELECT * FROM servicios where id IN (15, 16, 17)");
+            $row = $qry->fetchAll();
+            $db->closeConnection();
+            return $row;
+        } catch (Exception $e) {
+            echo $e;
+        } 
+    }
+
+    public function correospendientes(){
+         try {
+            $db = Zend_Db_Table::getDefaultAdapter();
+            $qry = $db->query("SELECT * FROM contacto where status_leido = 0 limit 3");
+            $row = $qry->fetchAll();
+            $db->closeConnection();
+            return $row;
+        } catch (Exception $e) {
+            echo $e;
+        } 
+    }
+
+    public function mesgrafica($month, $year){
+         try {
+            $db = Zend_Db_Table::getDefaultAdapter();
+            $qry = $db->query("SELECT c.id, c.nombre, c.email_personal, c.mensaje, c.status_leido, c.status_imp, c.empresa, year(date(CONCAT(SUBSTRING(c.fecha_envio, 7, 4),  '-', SUBSTRING(c.fecha_envio, 4, 2), '-', SUBSTRING(c.fecha_envio, 1, 2)))) AS years ,month(date(CONCAT(SUBSTRING(c.fecha_envio, 7, 4),  '-', SUBSTRING(c.fecha_envio, 4, 2), '-', SUBSTRING(c.fecha_envio, 1, 2)))) AS mes ,day(date(CONCAT(SUBSTRING(c.fecha_envio, 7, 4),  '-', SUBSTRING(c.fecha_envio, 4, 2), '-', SUBSTRING(c.fecha_envio, 1, 2)))) AS dia FROM contacto c having 
+                 mes  = $month
+                AND years = $year");
+            $row = $qry->fetchAll();
+            $db->closeConnection();
+            return $row;
+        } catch (Exception $e) {
+            echo $e;
+        } 
+    }
+
+
+
+
+
 }
