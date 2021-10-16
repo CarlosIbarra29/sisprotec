@@ -27,6 +27,8 @@ class LandingController extends Zend_Controller_Action{
 
         $this->view->QuienesSomos = $this->_landing->QuienesSomos();
 
+        $this->view->Servicios = $this->_landing->Servicios();
+        $this->view->Footer = $this->_landing->Footer();
 
     }
 

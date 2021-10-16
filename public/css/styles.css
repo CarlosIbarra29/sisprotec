@@ -2404,8 +2404,8 @@ button.btn--primary,
 input[type="submit"].btn--primary, 
 input[type="reset"].btn--primary, 
 input[type="button"].btn--primary {
-    background: var(--color-btn-primary);
-    border-color: var(--color-btn-primary);
+    background: var(--color-7);
+    border-color: var(--color-7);
     color: var(--color-btn-primary-text);
 }
 
@@ -3047,7 +3047,7 @@ input::-moz-focus-inner {
 }
 
 .section-head .desc {
-    color: var(--color-1);
+    color: var(--color-7);
     font-size: 1.6rem;
     line-height: var(--vspace-0_75);
 }
@@ -4836,7 +4836,7 @@ margin:auto;
 }
 
 .s-blog .section-head .desc {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--color-7);
 }
 
 .s-blog .section-head .lead {
@@ -5270,7 +5270,7 @@ margin:auto;
 }
 
 .s-contact a:hover, .s-contact a:focus {
-    color: var(--color-1);
+    color: var(--color-7);
 }
 
 /* ------------------------------------------------------------------- 
@@ -5386,7 +5386,7 @@ margin:auto;
 }
 
 .s-footer__social a:focus, .s-footer__social a:hover {
-    color: var(--color-1);
+    color: var(--color-7);
 }
 
 .s-footer__social li {
@@ -5460,7 +5460,7 @@ margin:auto;
 }
 
 .ss-go-top a:hover, .ss-go-top a:focus {
-    background-color: var(--color-1);
+    background-color: var(--color-7);
 }
 
 .ss-go-top svg {
@@ -5516,7 +5516,7 @@ margin:auto;
 }
 
 .ss-go-top1 a:hover, .ss-go-top1 a:focus {
-    background-color: var(--color-1);
+    background-color: var(--color-7);
 }
 
 

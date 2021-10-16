@@ -179,7 +179,7 @@ class Application_Model_LandingModel extends Zend_Db_Table_Abstract{
         try {
         
             $db = Zend_Db_Table::getDefaultAdapter();
-            $sql = "SELECT * FROM servicios  WHERE id in (1)";
+            $sql = "SELECT * FROM servicios  WHERE id in (1, 15, 16, 17)";
             $qry = $db->query( $sql );      
             $row = $qry->fetchAll();
             $db->closeConnection();
@@ -194,4 +194,39 @@ class Application_Model_LandingModel extends Zend_Db_Table_Abstract{
     }
 
 
+    public function Servicios(){
+        try {
+        
+            $db = Zend_Db_Table::getDefaultAdapter();
+            $sql = "SELECT * FROM servicios  WHERE id in (2, 3, 4, 5, 6, 7, 8, 9, 10, 11)";
+            $qry = $db->query( $sql );      
+            $row = $qry->fetchAll();
+            $db->closeConnection();
+            
+            return $row;
+        
+        } catch (Exception $e) {
+        
+            echo $e;
+        
+        }
+    }
+
+     public function Footer(){
+        try {
+        
+            $db = Zend_Db_Table::getDefaultAdapter();
+            $sql = "SELECT * FROM footer";
+            $qry = $db->query( $sql );      
+            $row = $qry->fetchAll();
+            $db->closeConnection();
+            
+            return $row;
+        
+        } catch (Exception $e) {
+        
+            echo $e;
+        
+        }
+    }
 }

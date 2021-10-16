@@ -5,467 +5,14 @@
     	
     	height: 500px;
     }
-</style>
-<!-- <style>
 
-
-	.PADDING{
-
-		padding: 100px;
-
-	}
-	
-	.QUIENES_SOMOS{
-	    
-	    background: url(<?php print $this->aData[0]['IMAGEN'] ?>) no-repeat fixed center;
-	    
-	    -webkit-background-size: cover;
-	    
-	    -moz-background-size: cover;
-	    
-	    -o-background-size: cover;
-	    
-	    background-size: cover;
-	    
-	    height: 100%;
-	    
-	    width: 100% ;
-
-	}
-
-	.SIS_TRACK{
-
-		background: url(<?php print $this->aData[1]['IMAGEN'] ?>) no-repeat fixed center;
-	    
-	    -webkit-background-size: cover;
-	    
-	    -moz-background-size: cover;
-	    
-	    -o-background-size: cover;
-	    
-	    background-size: cover;
-	    
-	    height: 100%;
-	    
-	    width: 100% ;
-
-	}
-
-	.CUSTODIA{
-	    
-	    background: url(<?php print $this->aData[2]['IMAGEN'] ?>) no-repeat fixed center;
-	    
-	    -webkit-background-size: cover;
-	    
-	    -moz-background-size: cover;
-	    
-	    -o-background-size: cover;
-	    
-	    background-size: cover;
-	    
-	    height: 100%;
-	    
-	    width: 100% ;
-
-	}
-
-	.CONSULTORIA{
-	    
-	    background: url(<?php print $this->aData[3]['IMAGEN'] ?>) no-repeat fixed center;
-	    
-	    -webkit-background-size: cover;
-	    
-	    -moz-background-size: cover;
-	    
-	    -o-background-size: cover;
-	    
-	    background-size: cover;
-	    
-	    height: 100%;
-	    
-	    width: 100% ;
-
-	}
-
-	.RASTREOS{
-	    
-	    background-color:  whitesmoke;
-	    
-	    -webkit-background-size: cover;
-	    
-	    -moz-background-size: cover;
-	    
-	    -o-background-size: cover;
-	    
-	    background-size: cover;
-
-	}
-
-	.CONSULTORIA_PROCESOS{
-	    
-	    background: url(<?php print $this->aData[4]['IMAGEN'] ?>) no-repeat fixed center;
-	    
-	    -webkit-background-size: cover;
-	    
-	    -moz-background-size: cover;
-	    
-	    -o-background-size: cover;
-	    
-	    background-size: cover;
-	    
-	    height: 100%;
-	    
-	    width: 100% ;
-
-	}
-
-	.CAPACITACION{
-	    
-	    background: url(<?php print $this->aData[5]['IMAGEN'] ?>) no-repeat fixed center;
-	    
-	    -webkit-background-size: cover;
-	    
-	    -moz-background-size: cover;
-	    
-	    -o-background-size: cover;
-	    
-	    background-size: cover;
-	    
-	    height: 100%;
-	    
-	    width: 100% ;
-
-	}
-
-	.ANALISIS{
-	    
-	    background: url(<?php print $this->aData[6]['IMAGEN'] ?>) no-repeat fixed center;
-	    
-	    -webkit-background-size: cover;
-	    
-	    -moz-background-size: cover;
-	    
-	    -o-background-size: cover;
-	    
-	    background-size: cover;
-	    
-	    height: 100%;
-	    
-	    width: 100% ;
-
-	}
-
-	.AUDITORIA{
-	    
-	    background: url(<?php print $this->aData[7]['IMAGEN'] ?>) no-repeat fixed center;
-	    
-	    -webkit-background-size: cover;
-	    
-	    -moz-background-size: cover;
-	    
-	    -o-background-size: cover;
-	    
-	    background-size: cover;
-	    
-	    height: 100%;
-	    
-	    width: 100% ;
-
-	}
-
-	.carousel-inner img {
+    .imgrastreo  {
     	
-    	width: 100%;
+    	width: 315px;
     	
-    	height: 100%;
+    	height: 215px;
     }
-
-    .PADDING_INI{
-
-    	padding: 150px;
-    }
-
 </style>
-
-<div class="row QUIENES_SOMOS">
-
-	<div class="col-sm-6 col-md-6 col-xs-6 PADDING_INI">
-
-		<h4 class="text-center" style="color: <?php print $this->aData[0]['COLOR'] ?>;"><?php print $this->aData[0]['TEXTO_TITULO'] ?></h4>
-
-		<br>
-
-		<p><?php print $this->aData[0]['TEXTO'] ?></p>
-
-	</div>
-
-	<div class="col-sm-6 col-md-6 col-xs-6">
-
-		<div id="demo" class="carousel slide" data-ride="carousel">
-
-		  <ul class="carousel-indicators">
-		  
-		    <li data-target="#demo" data-slide-to="0" class="active"></li>
-
-		    <li data-target="#demo" data-slide-to="1"></li>
-		    
-		    <li data-target="#demo" data-slide-to="2"></li>
-		  
-		  </ul>
-		  
-		  
-		  <div class="carousel-inner">
-		  
-		    <div class="carousel-item active">
-		  
-		      <img src="<?php print $this->aDataImg[0]['IMAGEN'] ?>" alt="" width="1100" height="500">
-		  
-		    </div>
-		  
-		    <div class="carousel-item">
-		  
-		      <img src="<?php print $this->aDataImg[1]['IMAGEN'] ?>" alt="" width="1100" height="500">
-		  
-		    </div>
-		  
-		    <div class="carousel-item">
-		  
-		      <img src="<?php print $this->aDataImg[2]['IMAGEN'] ?>" alt="" width="1100" height="500">
-		  
-		    </div>
-		  
-		  </div>
-		  
-		  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-
-		    <span class="carousel-control-prev-icon" style="back"></span>
-
-		  </a>
-
-		  <a class="carousel-control-next" href="#demo" data-slide="next">
-
-		    <span class="carousel-control-next-icon"></span>
-
-		  </a>
-
-		</div>
-
-	</div>
-
-</div>	
-
-<hr>
-
-<div class="row SIS_TRACK PADDING">
-
-	<div class="col-sm-6 col-md-6 col-xs-6 ">
-
-		<h4 class="text-center" style="color: <?php print $this->aData[1]['COLOR'] ?>;"><?php print $this->aData[1]['TEXTO_TITULO'] ?></h4>
-
-		<br>
-
-		<p><?php print $this->aData[1]['TEXTO'] ?></p>
-
-	</div>
-
-	<div class="col-sm-6 col-md-6 col-xs-6">
-
-	</div>
-
-</div>	
-
-<hr>
-
-<div class="row CUSTODIA PADDING">
-
-	<div class="col-sm-6 col-md-6 col-xs-6 ">
-
-		<h4 class="text-center" style="color: <?php print $this->aData[2]['COLOR'] ?>;"><?php print $this->aData[2]['TEXTO_TITULO'] ?></h4>
-
-		<br>
-
-		<p><?php print $this->aData[2]['TEXTO'] ?></p>
-
-	</div>
-
-	<div class="col-sm-6 col-md-6 col-xs-6">		
-
-	</div>
-
-</div>	
-
-<hr>
-
-<div class="row CONSULTORIA PADDING">
-
-	<div class="col-sm-6 col-md-5 col-xs-5 ">
-
-	</div>
-
-	<div class="col-sm-7 col-md-7 col-xs-7">
-
-		<h4 class="text-center" style="color: <?php print $this->aData[3]['COLOR'] ?>;"><?php print $this->aData[3]['TEXTO_TITULO'] ?></h4>
-
-		<br>
-
-		<p><?php print $this->aData[3]['TEXTO'] ?></p>
-
-	</div>
-
-</div>	
-
-<hr>
-
-<div class="row RASTREOS PADDING">
-
-	<div class="col-sm-4 col-md-4 col-xs-4 ">
-
-		<div class="thumbnail">
-
-			<img src="<?php print $this->aData[8]['IMAGEN'] ?>" alt="Nature" style="width:100%">
-
-			<br><br>
-
-			<h5 class="text-center" style="color: <?php print $this->aData[8]['COLOR'] ?>;"><?php print $this->aData[8]['TEXTO_TITULO'] ?></h5>
-
-			<hr>
-     
-	         <div class="caption">
-	     
-	            <p><?php print $this->aData[8]['TEXTO'] ?></p>
-	     
-	         </div>
-
-	    </div>
-
-	</div>
-
-	<div class="col-sm-4 col-md-4 col-xs-4 ">
-
-		<div class="thumbnail">
-
-			<img src="<?php print $this->aData[9]['IMAGEN'] ?>" alt="Nature" style="width:100%">
-
-			<br><br>
-
-			<h5 class="text-center" style="color: <?php print $this->aData[9]['COLOR'] ?>;"><?php print $this->aData[9]['TEXTO_TITULO'] ?></h5>
-
-			<hr>
-     
-	         <div class="caption">
-	     
-	            <p><?php print $this->aData[9]['TEXTO'] ?></p>
-	     
-	         </div>
-
-	    </div>
-
-	</div>
-
-	<div class="col-sm-4 col-md-4 col-xs-4 ">
-
-		<div class="thumbnail">
-
-			<img src="<?php print $this->aData[10]['IMAGEN'] ?>" alt="Nature" style="width:100%">
-
-			<br><br>
-
-			<h5 class="text-center" style="color: <?php print $this->aData[10]['COLOR'] ?>;"><?php print $this->aData[10]['TEXTO_TITULO'] ?></h5>
-
-			<hr>
-     
-	         <div class="caption">
-	     
-	            <p><?php print $this->aData[10]['TEXTO'] ?></p>
-	     
-	         </div>
-
-	    </div>
-
-	</div>
-
-</div>	
-
-<hr>
-
-<div class="row CONSULTORIA_PROCESOS PADDING">
-
-	<div class="col-sm-6 col-md-6 col-xs-6 ">
-
-		<h4 class="text-center" style="color: <?php print $this->aData[4]['COLOR'] ?>;"><?php print $this->aData[4]['TEXTO_TITULO'] ?></h4><br>
-
-		<br>
-
-		<p><?php print $this->aData[4]['TEXTO'] ?></p>
-
-	</div>
-
-	<div class="col-sm-6 col-md-6 col-xs-6">
-
-	</div>
-
-</div>	
-
-<hr>
-
-<div class="row CAPACITACION PADDING">
-
-	<div class="col-sm-6 col-md-5 col-xs-5 ">
-
-	</div>
-
-	<div class="col-sm-7 col-md-7 col-xs-7">
-
-		<h4 class="text-center" style="color: <?php print $this->aData[5]['COLOR'] ?>;"><?php print $this->aData[5]['TEXTO_TITULO'] ?></h4>
-
-		<br>
-
-		<p><?php print $this->aData[5]['TEXTO'] ?></p>
-
-	</div>
-
-</div>	
-
-<hr>
-
-<div class="row ANALISIS PADDING">
-
-	<div class="col-sm-4 col-md-4 col-xs-4 ">
-
-	</div>
-
-	<div class="col-sm-8 col-md-8 col-xs-8">
-
-		<h4 class="text-center" style="color: <?php print $this->aData[6]['COLOR'] ?>;"><?php print $this->aData[6]['TEXTO_TITULO'] ?></h4>
-
-		<br>
-
-		<p><?php print $this->aData[6]['TEXTO'] ?></p>
-
-	</div>
-
-</div>	
-
-<hr>
-
-<div class="row AUDITORIA PADDING">
-
-	<div class="col-sm-6 col-md-6 col-xs-6 ">
-
-		<h4 class="text-center" style="color: <?php print $this->aData[7]['COLOR'] ?>;"><?php print $this->aData[7]['TEXTO_TITULO'] ?></h4>
-
-		<br>
-
-		<p><?php print $this->aData[7]['TEXTO'] ?></p>
-
-	</div>
-
-	<div class="col-sm-6 col-md-6 col-xs-6">
-		
-	</div>
-
-</div>	 -->
-
 
 
 <!DOCTYPE html>
@@ -533,8 +80,8 @@
                     <li class="current"><a class="smoothscroll" href="#home">Inicio</a></li>
                     <li><a class="smoothscroll" href="#quienes">Quiénes Somos</a></li>
                     <li><a class="smoothscroll" href="#services">Servicios</a></li>
-                    <li><a class="smoothscroll" href="#productos">Productos</a></li>
-                    <li><a  href="/home/contacto"> Contacto</a></li>
+                    <li><a href="/home/contacto"> Contacto</a></li>
+                    <li><a href="/home/login">Acceso</a></li>
                 </ul>
             </nav>
 
@@ -640,7 +187,7 @@
                 <h2><?php print $this->QuienesSomos[0]['nombre'] ?></h2>
                 <p class="nos">Soluciones al instante.</p>
               <!--   <hr class="hr_p"> -->
-                <p class="lead"><?php print $this->QuienesSomos[0]['descripcion'] ?> </p>
+                <p class="lead"><?php print $this->QuienesSomos[0]['descripcion'] ?></p>
                 
             </div>
 
@@ -690,32 +237,32 @@
         <div class="row block-large-1-3 block-medium-1-2 block-tab-full nosotros-list">
 
             <div class="column nosotros-item" data-aos="fade-up">
-                <h5>¿Qué hacemos?</h5>
+                <h5><?php print $this->QuienesSomos[1]['nombre'] ?></h5>
                 <p>
-                Creamos estrategias eficientes como herramienta paralela de canales de comunicación y marketing para cada cliente.
+                	<?php print $this->QuienesSomos[1]['descripcion'] ?>
                 </p>
                 <p>
-                    <img src="images/nosotros/mark_somos.png" class="img-responsive nosotros-img1"> 
+                    <img src="<?php print $this->QuienesSomos[1]['imagen'] ?>" class="img-responsive nosotros-img1"> 
                 </p>
             </div> <!-- end services-item -->
 
             <div class="column nosotros-item" data-aos="fade-up">
-                <h5>¿Cómo lo hacemos?</h5>
+                <h5><?php print $this->QuienesSomos[2]['nombre'] ?></h5>
                 <p>
-                Fortalecemos la credibilidad de nuestros clientes, construyendo su reputación y generando empatía con su público objeto.
+                	<?php print $this->QuienesSomos[2]['descripcion'] ?>
                 </p>
                 <p>
-                    <img src="images/nosotros/mark_nos.png" class="img-responsive nosotros-img1"> 
+                    <img src="<?php print $this->QuienesSomos[2]['imagen'] ?>" class="img-responsive nosotros-img1"> 
                 </p>
             </div> <!-- end services-item -->
 
             <div class="column align-x-center nosotros-item" data-aos="fade-up">
-                <h5>¿Por qué elegirnos?</h5>
+                <h5><?php print $this->QuienesSomos[3]['nombre'] ?></h5>
                 <p>
-                    Retorno de inversión inmediata, reflejada en el crecimiento de ventas y el aumento en la rotación de inventarios y picos de venta.
+                    <?php print $this->QuienesSomos[3]['descripcion'] ?>
                 </p>
                 <p>
-                    <img src="images/nosotros/mark_p.png" class="img-responsive nosotros-img1"> 
+                    <img src="<?php print $this->QuienesSomos[3]['imagen'] ?>" class="img-responsive nosotros-img1"> 
                 </p>
             </div> <!-- end services-item -->
 
@@ -733,19 +280,26 @@
             <div class="column large-6 medium-12" data-aos="fade-up">
                 <blockquote style="border-left: 3px solid white">  
                     <h2>Servicios</h2>
-                    <p class="ser">Marketing promocional reflejado en:</p>
+                    <p class="ser">Contamos con una variedad de servicios:</p>
                     <p class="lead">
-                       <img src="images/servicios/digital.png" class="services-ico" >  Diversidad en nuestros productos.<br>
-                        <img src="images/servicios/digital.png" class="services-ico" />  Enfoque en resultados tangibles.<br>
-                       <img src="images/servicios/digital.png" class="services-ico" />  Atención personalizada.<br>
-                       <img src="images/servicios/digital.png" class="services-ico" />  Entrega en todo el país.
+                    	<ul>
+  							<li>Custodia de Mercancías</li>
+  							<li>Rastro satelital y seguimiento de carga</li>
+  							<li>Seguridad Electrónica</li>
+  							<li>Venta de GPS</li>
+  							<li>Consultoría y desarrollo en estándares de seguridad</li>
+  							<li>Cursos de capacitación en Análisis de Vulnerabilidad</li>
+  							<li>Ejecución en sitio de Análisis de Vulnerabilidad</li>
+  							<li>Auditoria de Control y Seguridad</li>
+						</ul>
                     </p> 
                 </blockquote>
             </div>
 
             <div class="column large-6 medium-12 align-x-right" data-aos="fade-up">
+                <br/><br/>
                 <p>
-                    <img src="images/servicios/sitio.jpg" class="img-responsive services-img"> 
+                    <img src="img/servicios/fondo.jpg" class="img-responsive services-img"> 
                 </p>
             </div>
         </div> <!-- end section-head -->
@@ -753,17 +307,16 @@
         <div class="row block-large-1-3 block-medium-1-2 block-tab-full services-list">
             <div class="column services-item" data-aos="fade-up">
                 <figure class="snip1477">
-                    <img src="images/servicios/eventm.png"/>
+                    <img class="imgrastreo" src="<?php print $this->Servicios[7]['imagen'] ?>"/>
                     <div class="title">
                         <div>
-                            <h2>Event</h2>
-                            <h4>Marketing</h4>
+                            <h4><?php print $this->Servicios[7]['nombre'] ?></h4>
                         </div>
                     </div><!-- end title-->
 
                     <figcaption>
                         <p>
-                            Convertimos ideas en experiencias reales, interactuamos con los consumidores creando una conciencia de marca.
+                            <?php print $this->Servicios[7]['descripcion'] ?>
                         </p>
                     </figcaption>
                 </figure> <!-- end figure --> 
@@ -771,16 +324,15 @@
 
             <div class="column services-item" data-aos="fade-up">
                 <figure class="snip1478">
-                    <img src="images/servicios/cel.png"/>
+                    <img class="imgrastreo" src="<?php print $this->Servicios[8]['imagen'] ?>"/>
                     <div class="title">
                         <div>
-                            <h2>Impresiones</h2>
-                            <h4>3A</h4>
+                            <h4><?php print $this->Servicios[8]['nombre'] ?></h4>
                         </div>
                     </div>
                     <figcaption>
                         <p>
-                            Ofrecemos una amplia variedad en acabados, grabados, bordados y tipos de impresión sobre papel en offset y digital.
+                            <?php print $this->Servicios[8]['descripcion'] ?>
                         </p>
                     </figcaption>
                 </figure>  
@@ -788,17 +340,16 @@
 
             <div class="column align-x-center services-item" data-aos="fade-up">
                 <figure class="snip1477">
-                    <img src="images/servicios/stands.png"/>
+                    <img class="imgrastreo" src="<?php print $this->Servicios[9]['imagen'] ?>"/>
                     <div class="title">
                         <div>
-                            <h2>Stands</h2>
-                            <h4>3A</h4>
+                            <h4><?php print $this->Servicios[9]['nombre'] ?></h4>
                         </div>
                     </div><!-- end title-->
 
                     <figcaption>
                         <p>
-                            Brindamos soluciones integrales, con puntualidad, calidad y servicio personalizado.
+                            <?php print $this->Servicios[9]['descripcion'] ?>
                         </p>
                     </figcaption>
                 </figure> <!-- end figure --> 
@@ -815,84 +366,81 @@
 
         <div class="row section-head">
             <div class="column large-3 medium-12 " data-aos="fade-up">
-                <h2>Productos</h2>
-                <p class="desc">Check out our latest projects.</p>
+                <h2><?php print $this->Servicios[0]['nombre'] ?></h2>
+                <!-- <p class="desc">Check out our latest projects.</p> -->
             </div>
 
             <div class="column large-5 medium-12 align-x-right" data-aos="fade-up">
                 <p class="lead">
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis 
-                praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
-                excepturi sint occaecati cupiditate. At vero eos et accusamus et iusto odio 
-                dignissimos ducimus qui blanditiis praesentium.
+                	<?php print $this->Servicios[0]['descripcion'] ?>
                 </p>
             </div>
 
             <div class="column large-4 medium-12 align-x-right" data-aos="fade-up">
-                <p class="lead">
-                <img src="images/portfolio/serigrafia.png" alt="">
-                </p>
+                
+                <img src="<?php print $this->Servicios[0]['imagen'] ?>" alt="">
+                
             </div>
         </div> <!-- end section-head -->
 
         <div class="row block-large-1-3 block-medium-1-2 block-mob-full folio-list">
 
             <div class="column folio-item" data-aos="fade-up">
-                <h5>Serigrafía</h5>
+                <h5><?php print $this->Servicios[1]['nombre'] ?></h5>
                 <div class="folio-item__thumb">
-                    <img src="images/portfolio/serigrafia.png" alt="">
+                    <img src="<?php print $this->Servicios[1]['imagen'] ?>" alt="">
                     <span class="folio-item__text">
-                        Productos de calidad.
+                        <?php print $this->Servicios[1]['descripcion'] ?>
                     </span>
                 </div>
             </div> <!-- end folio-item -->
 
             <div class="column folio-item" data-aos="fade-up">
-                <h5>Grabado</h5>
+                <h5><?php print $this->Servicios[2]['nombre'] ?></h5>
                 <div class="folio-item__thumb">
-                    <img src="images/portfolio/grabado.png" alt="">
+                    <img src="<?php print $this->Servicios[2]['imagen'] ?>" alt="">
                     <span class="folio-item__text">
-                        Mejores Precios.
+                        <?php print $this->Servicios[2]['descripcion'] ?>
                     </span>
                 </div>
             </div> <!-- end folio-item -->
 
             <div class="column folio-item" data-aos="fade-up">
-                <h5>Bordado</h5>
+                <h5><?php print $this->Servicios[3]['nombre'] ?></h5>
                 <div class="folio-item__thumb">
-                    <img src="images/portfolio/bordado.png" alt="">
+                    <img src="<?php print $this->Servicios[3]['imagen'] ?>" alt="">
                     <span class="folio-item__text">
-                        Contenido a la medida.
+                        <?php print $this->Servicios[3]['descripcion'] ?>
                     </span>
                 </div>
             </div> <!-- end folio-item -->
 
             <div class="column folio-item" data-aos="fade-up">
-                <h5>Resinado</h5>
+                <h5><?php print $this->Servicios[4]['nombre'] ?></h5>
                 <div class="folio-item__thumb">
-                    <img src="images/portfolio/resinado.png" alt="">
+                    <img src="<?php print $this->Servicios[4]['imagen'] ?>" alt="">
                     <span class="folio-item__text">
-                        Pines, llaveros y mucho más
+                        <?php print $this->Servicios[4]['descripcion'] ?>
                     </span>
                 </div>
             </div> <!-- end folio-item -->
 
             <div class="column folio-item" data-aos="fade-up">
-                <h5>Arte PVC</h5>
+                <h5><?php print $this->Servicios[5]['nombre'] ?></h5>
                 <div class="folio-item__thumb">
-                    <img src="images/portfolio/pvc.png" alt="">
+                    <img src="<?php print $this->Servicios[5]['imagen'] ?>" alt="">
                     <span class="folio-item__text">
-                      Artículos de decoración.  
+                      <?php print $this->Servicios[5]['descripcion'] ?> 
                     </span>
                 </div>
             </div> <!-- end folio-item -->
 
             <div class="column folio-item" data-aos="fade-up">
-                <h5>Otros</h5>
+                <h5><?php print $this->Servicios[6]['nombre'] ?></h5>
                 <div class="folio-item__thumb">
-                    <img src="images/portfolio/otras.png" alt="">
+                    <img src="<?php print $this->Servicios[6]['imagen'] ?>" alt="">
                     <span class="folio-item__text">
-                        Variedad en técnicas.
+                        <?php print $this->Servicios[6]['descripcion'] ?>
                     </span>
                 </div>
             </div> <!-- end folio-item -->
@@ -901,40 +449,6 @@
 
     </section> <!-- end s-portfolio -->
 
-
-    <!-- CTA
-    ================================================== -->
-    <section class="s-cta ss-dark">
-
-        <div class="row heading-block heading-block--center" data-aos="fade-up">
-            <div class="column">
-                <h2 class="section-desc">
-                    ¿Buscas Marketing promocional?
-                </h2>
-            </div>
-        </div> <!-- end heading-block -->
-
-        <div class="row cta-content" data-aos="fade-up">
-            <div class="column">
-                <p>
-                Haz crecer tus ideas con nosotros.
-                Encuentra los mejores productos 
-                a los mejores precios.
-                Con envíos a todo la republica. 
-                </p>
-
-                <a href="https://www.3abranding.com/" target="_blank" class="btn h-full-width">Visitanos Ahora</a>
-            </div>
-        </div> <!-- end ad-content -->
-
-    </section> <!-- end s-cta -->
-
-    <!-- banner Figuras
-    ================================================== -->
-    <section>
-        <img src="images/foot1.png" >
-    </section>
-    <!-- end Figuras -->
 
     <!-- contact
     ================================================== -->
@@ -951,56 +465,12 @@
 
             <div class="column large-7 medium-12">
                 <h3 class="display-1">
-                    ¿Tienes una idea o un proyecto en mente? Habla con nosotros. Trabajemos juntos y hagamos grandes cosas. Contáctanos.
+                    <?php print $this->Footer[0]['texto'] ?>
                 </h3>
 
                 <div class="s-contact__email-us">
-                    <a href="#modal-contacto" class="btn btn--primary h-full-width" data-lity>Búscanos ahora.</a>
+                    <a href="/home/contacto" class="btn btn--primary h-full-width" data-lity>Búscanos ahora.</a>
                 </div>
-
-
-        <div id="modal-contacto" class="modal-popup lity-hide">
-            <img src="images/formula.png" alt="" /> 
-                <!-- Inicio Formulario 1
-                ================================================== -->
-            <div class="modal-popup__desc">
-                <h3 class="h-add-bottom">Contáctanos</h3>
-
-                <form action="">
-                    <div>
-                        <input class="h-full-width" type="text" placeholder="Nombre" id="name" required="">
-                    </div>
-                    <div>
-                        <input class="h-full-width" type="email" placeholder="Email@mail.com" id="email" required="">
-                    </div>
-                    <div>
-                        <input class="h-full-width" type="tel" placeholder="Teléfono" id="phone" required="">
-                    </div>
-                    <div>
-                        <label for="reason">Razón de Contacto</label>
-                        <div class="ss-custom-select">
-                            <select class="h-full-width" id="reason" required="">
-                                <option value="Option1"></option>
-                                <option value="Option2">Productos</option>
-                                <option value="Option3">Servicios</option>
-                                <option value="Option4">Otros</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <label for="message">Escribe tu mensaje</label>
-                    <textarea class="h-full-width" placeholder="Escribe tus dudas y comentarios." id="message" required=""></textarea>
-
-                    <label class="h-add-bottom">
-                        <input type="checkbox">
-                        <span class="label-text">Estas de acuerdo con nuestro Aviso de privacidad.</span>
-                    </label>
-                
-                    <input class="btn--primary h-full-width" type="submit" value="Enviar">
-                </form>
-            </div>
-
-        </div>
 
             </div>
 
@@ -1015,9 +485,7 @@
         
                             <h5>Encuentranos aquí</h5>
                             <p>
-                            Las Margaritas C.P. 54050<br>
-                            Tlalnepantla de Baz, México<br>
-                            México.
+                            <?php print $this->Footer[0]['ubicacion'] ?>
                             </p>
                         </div> <!-- end s-contact__info-block -->
                     </div>
@@ -1030,9 +498,9 @@
         
                             <h5>Saludanos.</h5>
                             <p>
-                            contacto@3abranding.com <br>
-                            (55) 7090 8638 <br>
-                            (55) 7090 8639
+                            <?php print $this->Footer[0]['email'] ?> <br>
+                            <?php print $this->Footer[0]['telefono_uno'] ?> <br>
+                            <?php print $this->Footer[0]['telefono_dos'] ?>
                             </p>
                         </div> <!-- end s-contact__info-block -->
                     </div>
@@ -1049,11 +517,11 @@
         <div class="row">
             <div class="column large-4 medium-6 w-1000-stack s-footer__social-block">
                 <ul class="s-footer__social">
-                    <li><a target="_blank" href="https://www.facebook.com/3ABranding"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                    <li><a target="_blank" href="https://www.twitter.com/3ABrandingG"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a target="_blank" href="https://www.instagram.com/3a_branding"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a target="_blank" href="https://www.facebook.com/sisprotec"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                    <li><a target="_blank" href="https://www.twitter.com/sisprotec"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a target="_blank" href="https://www.instagram.com/sisprotec"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
                     <li><a href="#0"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
-                    <li><p style="font-size: 15px;"><a href="#modal-aviso" class="h-full-width" data-lity>Aviso de Privacidad.</a></p></li>
+                    <li><p style="font-size: 15px;"><a href="#modal-avisos" class="h-full-width" data-lity>Aviso de Privacidad.</a></p></li>
                 </ul>
             </div>          
 
@@ -1064,7 +532,7 @@
         </div>
 
         <div class="ss-go-top1">
-            <a target="_blank" title="whatsApp" name="whatsapp"  href="https://api.whatsapp.com/send?phone=5215567919161&text=3A Branding, ¿Pueden Ayudarme?" >
+            <a target="_blank" title="whatsApp" name="whatsapp"  href="https://api.whatsapp.com/send?phone=5215567919161&text=SIS PROTEC, ¿Pueden Ayudarme?" >
                 <svg viewBox="0 0 32 32" class="whatsapp-ico">
                     <path d=" M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z" fill-rule="evenodd">   
                     </path>
