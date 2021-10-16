@@ -25,7 +25,7 @@
 
 <div class="row" style="margin-top: 15px;">
   <div class="col m12 s12">
-    <a class="btn st-bt-back" href="javascript:window.history.go(-1);"><i class="material-icons left">arrow_back</i>Regresar</a>
+    <a class="btn st-bt-back" href="/contacto/bandeja"><i class="material-icons left">arrow_back</i>Regresar</a>
   </div>
 </div>
 
@@ -37,6 +37,8 @@
     $created_at = $key['created_at'];
     $status_leido = $key['status_leido'];
     $status_imp = $key['status_imp'];
+    $empresa = $key['empresa'];
+    $fecha_envio = $key['fecha_envio'];
   } ?>
 
 
@@ -82,7 +84,7 @@
           <div class="col m12 s12">
             <span class="titulo">Nombre:</span> <span><?php echo $nombre_correo; ?></span> <br>
             <span class="titulo">Correo:</span> <span><?php echo $email_correo; ?></span> <br>
-            <span class="titulo">Fecha:</span> <span><?php echo $created_at; ?></span> <br>
+            <span class="titulo">Fecha:</span> <span><?php echo $fecha_envio; ?></span> <br>
           </div>
         </div>
       </div>
@@ -125,6 +127,7 @@
               <thead>
                 <tr>
                     <th>Mensaje</th>
+                    <th>Empresa</th>
                 </tr>
               </thead>
 
@@ -133,6 +136,7 @@
                   <td>
                     <span><?php echo $mensaje_correo; ?></span>
                   </td>
+                  <td><?php echo $empresa; ?></td>
                 </tr>
               </tbody>
             </table>

@@ -370,6 +370,7 @@ class Application_Model_SeasonPanelModel extends Zend_Db_Table_Abstract{
         } 
     }
 
+
     public function correospendientes(){
          try {
             $db = Zend_Db_Table::getDefaultAdapter();

@@ -126,6 +126,41 @@ class Application_Model_ServiciosModel extends Zend_Db_Table_Abstract{
         }
     }// END UPDATE SERVICIO
 
+    public function updatefooter($post){
+        $id = 1;
+        try {
+            $db = Zend_Db_Table::getDefaultAdapter();
+            $qry = $db->query("UPDATE footer SET texto = ?, ubicacion = ?, email = ?, telefono_uno =?, telefono_dos = ? WHERE id = ?",array(
+                $post['footer'],
+                $post['ubicacion'],
+                $post['email'],
+                $post['telefono_uno'],
+                $post['telefono_dos'],
+                $id));
+            $db->closeConnection();               
+            return $qry;
+        } 
+        catch (Exception $e) {
+            echo $e;
+        }
+    }// END UPDATE SERVICIO
+
+
+
+    public function getnormalservicio($table){
+        try{
+            $db = Zend_Db_Table::getDefaultAdapter();
+            $qry = $db->query("SELECT s.id, s.nombre, s.descripcion, s.imagen
+                FROM servicios s where id != 1 AND id !=12 AND id !=13 AND id !=14 AND id !=15 AND id !=16 AND id !=17
+                Order by id asc ");
+            $row = $qry->fetchAll();
+            return $row;
+            $db->closeConnection();
+        }catch (Exception $e){
+            echo $e;
+        }
+    }
+
     public function Getpaginationservicio($table,$offset,$no_of_records_per_page){
         try{
             $db = Zend_Db_Table::getDefaultAdapter();

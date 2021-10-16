@@ -52,6 +52,10 @@ class QuienesController extends Zend_Controller_Action{
         $this->view->quienessomos = $this->_season->quienessomos();      
         $this->view->slider = $this->_season->sliderprincipal();
         $this->view->seccion = $this->_season->secciones();
+        
+        $table="footer";
+        $this->view->footer = $this->_season->GetAll($table);
+
     }
 
     public function requestaupdatequienesAction(){
@@ -242,6 +246,24 @@ class QuienesController extends Zend_Controller_Action{
         }       
     }
 
+    public function requestaupdatefooterAction(){
+        $this->_helper->layout()->disableLayout();
+        $this->_helper->viewRenderer->setNoRender(true);
+        $post = $this->getRequest()->getPost();
+
+        if($this->getRequest()->getPost()){
+
+            $result = $this->_servicio->updatefooter($post,$urldb_valores,$desc);
+            if ($result) {
+                return $this-> _redirect('/quienes/index');
+            }else{
+                print '<script language="JavaScript">'; 
+                print 'alert("Ocurrio un error: Comprueba los datos.");'; 
+                print '</script>'; 
+            }
+
+        }        
+    }
 
     public function formatSizeUnits($bytes){
         if ($bytes >= 1073741824)

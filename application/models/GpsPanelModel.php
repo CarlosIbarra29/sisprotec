@@ -16,13 +16,16 @@ class Application_Model_GpsPanelModel extends Zend_Db_Table_Abstract{
     }// END INSERT CERTIFICADO MEDICO PERSONAL DE CAMPO
 
 
-    public function insertcontacto($post,$table){
+    public function insertcontacto($post,$table,$hoy){
         try {
             $db = Zend_Db_Table::getDefaultAdapter();
             $datasave = array(
                 'nombre'=>$post['namecontacto'],
                 'email_personal'=>$post['mailcontacto'],
-                'mensaje'=>$post['message']); 
+                'mensaje'=>$post['message'],
+                'empresa'=>$post['empresa'],
+                'fecha_envio'=>$hoy
+            ); 
             $res = $db->insert($table, $datasave);
             $db->closeConnection();               
             return $res;
