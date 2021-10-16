@@ -27,7 +27,10 @@
     $created_at = $key['created_at'];
     $status_leido = $key['status_leido'];
     $status_imp = $key['status_imp'];
+    $empresa = $key['empresa'];
+    $fecha_envio = $key['fecha_envio'];
   } ?>
+
 <div class="row" style="margin-top: 10px;">
 
     <div class="col m6 s6">
@@ -73,7 +76,7 @@
             <div class="for" style="margin-top: 90px;">
 	            <span class="titulo">Nombre:</span> <span><?php echo $nombre_correo; ?></span> <br>
 	            <span class="titulo">Correo:</span> <span><?php echo $email_correo; ?></span> <br>
-	            <span class="titulo">Fecha:</span> <span><?php echo $created_at; ?></span> <br>
+	            <span class="titulo">Fecha:</span> <span><?php echo $fecha_envio; ?></span> <br>
             </div>
 
             <div class="from" style="margin-top: 60px;">
@@ -89,6 +92,7 @@
               <thead>
                 <tr>
                     <th>Mensaje</th>
+                    <th>Empresa</th>
                 </tr>
               </thead>
 
@@ -96,6 +100,9 @@
                 <tr>
                   <td>
                     <span><?php echo $mensaje_correo; ?></span>
+                  </td>
+                  <td>
+                  	<?php echo $empresa; ?>
                   </td>
                 </tr>
               </tbody>

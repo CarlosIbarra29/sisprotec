@@ -212,10 +212,12 @@ class HomeController extends Zend_Controller_Action{
         $this->_helper->viewRenderer->setNoRender(true);
         $post = $this->getRequest()->getPost();
 
+        date_default_timezone_set('America/Mexico_City');
+        $hoy = date("d-m-Y H:i:s");
 
         if($this->getRequest()->getPost()){
             $table="contacto";
-            $result = $this->_panel->insertcontacto($post,$table);
+            $result = $this->_panel->insertcontacto($post,$table,$hoy);
             
             if ($result) {
                 return $this-> _redirect('/home/contacto');

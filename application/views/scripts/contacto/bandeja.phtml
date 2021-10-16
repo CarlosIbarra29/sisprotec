@@ -85,7 +85,7 @@
     color: #ffd700;
   }
 
-  
+
 </style>
 
 <?php 
@@ -160,6 +160,7 @@
                     <th>Nombre</th>
                     <th>Correo</th>   
                     <th>Fecha</th>
+                    <th>Empresa</th>
                     <th>Detalle correo</th>
                   </tr> 
                 </thead>
@@ -178,7 +179,10 @@
                       <h5><?php echo $usr['email_personal']; ?></h5>
                     </td>
                     <td>
-                      <h5><?php echo $usr['created_at']; ?></h5>
+                      <h5><?php echo $usr['fecha_envio']; ?></h5>
+                    </td>
+                    <td>
+                      <h5><?php echo $usr['empresa']; ?></h5>
                     </td>
 
                     <td class="text-center">

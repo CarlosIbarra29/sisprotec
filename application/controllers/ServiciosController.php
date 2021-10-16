@@ -19,7 +19,7 @@ class ServiciosController extends Zend_Controller_Action{
         $this->view->actpage=$actualpagina;
 
         $table="servicios";
-        $servicio=$this->_season->GetAll($table);
+        $servicio=$this->_servicio->getnormalservicio($table);
         $count=count($servicio);
         if (isset($_GET['pagina'])) {$pagina = $_GET['pagina'];} else {$pagina= $this->view->pagina = 1;} 
 
