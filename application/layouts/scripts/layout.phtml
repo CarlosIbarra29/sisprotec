@@ -370,7 +370,7 @@ setInterval(function() {
                     <a href="/index/logout" style="color:red;">Cerrar Sesion <i class="material-icons" style="color:red;">highlight_off</i></a>
                 </li>
                 <li class="bold moves <?php echo getUrl('/panel/index',$actual_link);?>">
-                    <a href="/panel/index">Dashboard <i class="material-icons">extension</i></a>
+                    <a href="/panel/index/year/<?php echo $year; ?>">Dashboard <i class="material-icons">extension</i></a>
                 </li>
                 <li class="bold moves <?php echo getUrl('/panel/usuarios',$actual_link);?>">
                     <a href="/panel/usuarios">Usuarios <i class="material-icons">person</i></a>
@@ -380,12 +380,12 @@ setInterval(function() {
                     <a href="/contacto/bandeja">Contacto <i class="material-icons">contact_mail</i></a>
                 </li> 
 
-                <!-- <li class="bold moves <?php echo getUrl('/quienes/index',$actual_link);?>">
-                    <a href="/quienes/index">Secciones <i class="material-icons">announcement</i></a>
-                </li>   -->
+                <li class="bold moves <?php echo getUrl('/quienes/index',$actual_link);?>">
+                    <a href="/quienes/index">Principal <i class="material-icons">announcement</i></a>
+                </li>  
 
                 <li class="bold moves <?php echo getUrl('/servicios/servicios',$actual_link); echo getservicio($actual_link);?>">
-                    <a href="/servicios/servicios">Secciones <i class="material-icons">assignment</i></a>
+                    <a href="/servicios/servicios">Servicios <i class="material-icons">assignment</i></a>
                 </li>   
         </ul>                  
 

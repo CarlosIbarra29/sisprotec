@@ -63,6 +63,7 @@ class ServiciosController extends Zend_Controller_Action{
         }
     }
 
+
     public function requestupdateservicioprincipalAction(){
         $this->_helper->layout()->disableLayout();
         $this->_helper->viewRenderer->setNoRender(true);
@@ -187,7 +188,7 @@ class ServiciosController extends Zend_Controller_Action{
         $this->_helper->layout()->disableLayout();
         $this->_helper->viewRenderer->setNoRender(true);
         $post = $this->getRequest()->getPost();
-
+        var_dump($post);exit;
         $id=$post['id'];
         $table="servicios";
         $wh="id";
@@ -201,6 +202,9 @@ class ServiciosController extends Zend_Controller_Action{
             print '</script>';
         }
     }
+
+
+
 
     public function formatSizeUnits($bytes){
         if ($bytes >= 1073741824)

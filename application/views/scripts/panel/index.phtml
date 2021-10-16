@@ -1,0 +1,476 @@
+<style type="text/css">
+  .st-btn{
+    background-color: black; 
+    color: #ffd700;
+  }
+#cal .header {
+    cursor:default;
+    background: black ;
+    height: 34px;
+    position: relative;
+    color:#fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-weight:bold;
+    text-shadow:0px -1px 0 #87260C;
+    text-transform: uppercase;
+}
+#cal .header span {
+    display:inline-block;
+    line-height:34px;
+}
+
+/* nút chuyển đổi tháng */
+#cal .header .button {
+    width:24px;
+    text-align:center;
+    position:absolute;
+}
+#cal .header .left.button {
+    left:0;
+    border-top-left-radius: 5px;
+    border-right:1px solid #ffd700;
+}
+#cal .header .right.button {
+    right:0;
+    top:0;
+    border-left:1px solid #ffd700;
+    border-top-right-radius: 5px;
+}
+#cal .header .button:hover {
+    background: linear-gradient(top, #d94215, #bb330f);
+    background: gradient(linear, left top, left bottom, from(#d94215), to(#bb330f));
+}
+/* nhãn dán */
+#cal .header .month-year {
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+}
+
+/* tiêu đề ngày */
+#cal table {
+    background:#fff;
+    border-collapse:collapse;
+}
+#cal td {
+    color:#2b2b2b;
+    width:34px;
+    height:30px;
+    line-height:1px;
+    text-align:center;
+    border:1px solid #e6e6e6;
+    cursor:default;
+}
+#cal #days td {
+    height:26px;
+    line-height: 26px;
+    text-transform:uppercase;
+    font-size:90%;
+    color:#9e9e9e;
+}
+#cal #days td:not(:last-child) {
+    border-right:1px solid #fff;
+}
+
+/* -------- */
+#cal #cal-frame td.today {
+    background: #fbba00 ;
+    color:#fff;
+    box-shadow:1px 1px 0px #fff inset;
+}
+#cal #cal-frame td:not(.nil):hover {
+    color:#111;
+    text-shadow: #6C1A07 0px -1px;
+    background: pink;
+}
+
+/* ------ */
+#cal #cal-frame td span {
+    font-size:80%;
+    position:relative;
+}
+#cal #cal-frame td span:first-child {
+    bottom:5px;
+}
+#cal #cal-frame td span:last-child {
+    top:5px;
+}
+
+#cal #cal-frame table.curr {
+    float:left;
+}
+#cal #cal-frame table.temp {
+    position:absolute;
+}
+
+</style>
+
+
+<div class="row" style="margin-top: 30px;">
+    <div class="col m12 s12 text-center">
+      <span style="font-size:30px; color: rgb(74,79,84); letter-spacing: 0.1em; font-weight: bold;">Bienvenido</span>
+    </div>
+</div>
+
+
+  <div class="row" style="margin-top: 20px;">
+    <div class="col s12 m8">
+      <div class="card">
+        <div class="card-content">
+          <span style="font-size:20px; color: rgb(74,79,84); letter-spacing: 0.1em; font-weight: bold;">Correos Pendientes</span>
+
+          <div class="row" style="margin-top: 10px;">
+            <div class="col m12 s12">
+              <table class="table text-left table-hover">
+                <thead>
+                  <tr>
+                    <th>NO.</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>   
+                    <th>Fecha</th>
+                    <th>Detalle correo</th>
+                  </tr> 
+                </thead>
+                <?php
+                if ($this->correos) { 
+                foreach ($this->correos as $usr) { ?>
+                <tbody>
+                  <tr>
+                    <td>
+                      <h5><?php echo $usr['id']; ?></h5>
+                    </td>
+                    <td>
+                      <h5><?php echo $usr['nombre']; ?></h5>
+                    </td>
+                    <td>
+                      <h5><?php echo $usr['email_personal']; ?></h5>
+                    </td>
+                    <td>
+                      <h5><?php echo $usr['created_at']; ?></h5>
+                    </td>
+
+                    <td class="text-center">
+                      <a href="/contacto/bandejadetail/id/<?php echo $usr["id"] ?>" class="st-btn btn  modal-trigger"><i class="fa fa-2x fa-id-card-o"></i></a>
+                    </td>
+                  </tr>
+                  <?php } }else{ ?>
+                  </tbody> 
+                  <tbody>
+                      <tr>
+                          <td class="text-center" colspan="6"><h4>No se encontraron correos.</h4></td>
+                      </tr>
+                  </tbody>
+                              
+                  <?php } ?>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col m4 s12">
+      <div id="cal">
+        <div class="header">
+          <span class="left button" id="prev"> &lang; </span>
+          <span class="month-year" id="label"> June 20&0 </span>
+          <span class="right button" id="next"> &rang; </span>
+        </div>
+        <table id="days">
+          <td>Dom</td>
+          <td>Lun</td>
+          <td>Mar</td>
+          <td>Mie</td>
+          <td>Jue</td>
+          <td>Vie</td>
+          <td>Sab</td>
+        </table>
+        <div id="cal-frame">
+          <table class="curr">
+            <tbody>
+              <tr><td class="nil"></td><td class="nil"></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+              <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td class="today">11</td><td>12</td></tr>
+              <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+              <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+              <tr><td>27</td><td>28</td><td>29</td><td>30</td><td class="nil"></td><td class="nil"></td><td class="nil"></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+ 
+    <div class="col s12 m12">
+      <div class="card">
+        <div class="card-content">
+          <span style="font-size:20px; color: rgb(74,79,84); letter-spacing: 0.1em; font-weight: bold;">Grafica de Contactos</span>
+            <div class="row manger_div">
+                <div class="col m12 s12">
+                    <canvas id="myChartpedidos" style="width: 100px;"></canvas> 
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script type="text/javascript">
+    var CALENDAR = function () {
+    var wrap, label,
+    months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+
+    function init(newWrap) {
+      wrap     = $(newWrap || "#cal");
+      label    = wrap.find("#label");
+      wrap.find("#prev").bind("click.calendar", function () { switchMonth(false); });
+      wrap.find("#next").bind("click.calendar", function () { switchMonth(true);  });
+      label.bind("click", function () { switchMonth(null, new Date().getMonth(), new Date().getFullYear()); });
+      label.click();
+    }
+
+    function switchMonth(next, month, year) {
+
+      var curr = label.text().trim().split(" "), calendar, tempYear =  parseInt(curr[1], 10);
+      month = month || ((next) ? ( (curr[0] === "December") ? 0 : months.indexOf(curr[0]) + 1 ) : ( (curr[0] === "January") ? 11 : months.indexOf(curr[0]) - 1 ));
+      year = year || ((next && month === 0) ? tempYear + 1 : (!next && month == 11) ? tempYear -1 : tempYear);
+        // console.profile("createCal");
+        // calendar = createCal(year, month);
+        // console.profileEnd("createCal")
+
+      calendar =  createCal(year, month);
+            $("#cal-frame", wrap)
+                .find(".curr")
+                    .removeClass("curr")
+                    .addClass("temp")
+                .end()
+                .prepend(calendar.calendar())
+                .find(".temp")
+                    .fadeOut("slow", function () { $(this).remove(); });
+
+            $('#label').text(calendar.label);
+
+    }
+
+        function createCal(year, month) {
+
+        var day = 1, i, j, haveDays = true,
+            startDay = new Date(year, month, day).getDay(),
+            daysInMonths = [31, (((year%4==0)&&(year%100!=0))||(year%400==0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+            calendar = [];
+
+        if (createCal.cache[year]) {
+          if (createCal.cache[year][month]) {
+              return createCal.cache[year][month];
+          }
+        } else {
+            createCal.cache[year] = {};
+        }
+        i = 0;
+        while (haveDays) {
+            calendar[i] = [];
+            for (j = 0; j < 7; j++) {
+              if (i === 0) {
+                if (j === startDay) {
+                    calendar[i][j] = day++;
+                    startDay++;
+                }
+               } else if (day <= daysInMonths[month]) {
+                calendar[i][j] = day++;
+                 } else {
+                  calendar[i][j] = "";
+                  haveDays = false;
+                   }
+              if (day > daysInMonths[month]) {
+                  haveDays = false;
+              }
+              }
+            i++;
+          }
+
+        if (calendar[5]) {
+          for (i = 0; i < calendar[5].length; i++) {
+              if (calendar[5][i] !== "") {
+                  calendar[4][i] = "<span>" + calendar[4][i] + "</span><span>" + calendar[5][i] + "</span>";
+              }
+          }
+          calendar = calendar.slice(0, 5);
+          }
+
+        for (i = 0; i < calendar.length; i++) {
+            calendar[i] = "<tr><td>" + calendar[i].join("</td><td>") + "</td></tr>";
+          }
+          calendar = $("<table>" + calendar.join("") + "</table>").addClass("curr");
+
+          $("td:empty", calendar).addClass("nil");
+        if (month === new Date().getMonth()) {
+            $('td', calendar).filter(function () { return $(this).text() === new Date().getDate().toString(); }).addClass("today");
+        }
+        createCal.cache[year][month] = { calendar : function () { return calendar.clone() }, label : months[month] + " " + year };
+
+        return createCal.cache[year][month];
+
+        }
+        createCal.cache = {};
+        return {
+            init : init,
+            switchMonth : switchMonth,
+            createCal   : createCal
+        };
+    };
+
+
+var cal = CALENDAR();
+
+    cal.init();
+</script>
+
+
+    <input type="hidden" id="enero" value="<?php echo $this->count_enero; ?> ">
+    <input type="hidden" id="febrero" value="<?php echo $this->count_feb; ?>">
+    <input type="hidden" id="marzo" value="<?php echo $this->count_marz; ?>">
+    <input type="hidden" id="abril" value="<?php echo $this->count_abril; ?>">
+    <input type="hidden" id="mayo" value="<?php echo $this->count_mayo; ?>">
+    <input type="hidden" id="junio" value="<?php echo $this->count_junio; ?>">
+    <input type="hidden" id="julio" value="<?php echo $this->count_julio; ?>">
+    <input type="hidden" id="agosto" value="<?php echo $this->count_agosto; ?>">
+    <input type="hidden" id="septiembre" value="<?php echo $this->count_septiembre; ?>">
+    <input type="hidden" id="octubre" value="<?php echo $this->count_octubre; ?>">
+    <input type="hidden" id="noviembre" value="<?php echo $this->count_noviembre ?>">
+    <input type="hidden" id="diciembre" value="<?php echo $this->count_diciembre; ?>">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+<script type="text/javascript">
+  
+    var enero = document.getElementById("enero").value;
+    var febrero = document.getElementById("febrero").value;
+    var marzo = document.getElementById("marzo").value;
+    var abril = document.getElementById("abril").value;
+    var mayo = document.getElementById("mayo").value;
+    var junio = document.getElementById("junio").value;
+    var julio = document.getElementById("julio").value;
+    var agosto = document.getElementById("agosto").value;
+    var septiembre = document.getElementById("septiembre").value;
+    var octubre = document.getElementById("octubre").value;
+    var noviembre = document.getElementById("noviembre").value;
+    var diciembre = document.getElementById("diciembre").value;
+    var ctx = document.getElementById('myChartpedidos').getContext('2d');
+    var myChartpedidos = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels:['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            datasets: [{
+                label: 'Documentación',
+                data: [enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre,octubre,noviembre,diciembre],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>

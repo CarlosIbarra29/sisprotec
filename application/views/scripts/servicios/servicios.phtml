@@ -64,20 +64,20 @@
 </style>
 
 
-<div class="row mt-4">
+<!-- <div class="row mt-4">
 	<div class="col m12 s12 text-center" style="margin-top: 15px;">
 		<div class="row">
 			<div class="col m6 s12 text-right">
 			</div>
 			<div class="col m6 s12 text-right">
-				<a href="/servicios/crearservicio" class="st-btn btn">+ Agregar Servicio</a>
+				<a href="/servicios/crearservicio" class="st-btn btn">+ Agregar servicio</a>
 			</div>
 		</div>
 	</div>
 </div>
+ -->
 
-
-<div class="row">
+<div class="row" style="margin-top: 20px;">
     <div class="col m12 s12 text-center">
       <span style="font-size:30px; color: rgb(74,79,84); letter-spacing: 0.1em; font-weight: bold;">Servicios</span>
     </div>
@@ -89,67 +89,9 @@
       <div class="card">
         <div class="card-content">
 
-			<div class="row">
-				<div class="col m2 s12"></div>
-				<div class="col m8 s12">
-					<form action="/panel/searchusuarios" enctype="multipart/form-data" class="form-horizontal form-material">
-				        <div class="input-field col m8 s8">
-				          <input placeholder="Ingresa nombre" name="nombre" id="first_name" type="text" class="validate">
-				          <label for="first_name">Buscar por Nombre</label>
-				        </div>
-				        <div class="input-field col m4 s4">
-				        	<button tyle="submit" id="add_user" class="st-btn btn">Buscar <i class="material-icons left">search</i></button>
-				        </div>
-			    	</form>
-				</div>
-				<div class="col m2 s12"></div>
-			</div>
 
-			<div class="row">
-			    <div class="col m12 s12">
-			      <span style="font-size:20px; color: rgb(74,79,84); letter-spacing: 0.1em; font-weight: bold;">Principal</span>
-			    </div>
-			</div>
+	<div class="row">
 
-			<div class="row">
-				<div class="col m12 s12">
-					<table class="table text-left table-hover">
-					<thead>
-						<tr style="background-color: #EDEDED">
-							<th>Titulo</th>	
-							<th>Descripción</th>
-							<th>Imagen </th>
-							<th></th>
-						</tr> 
-					</thead>
-					<?php foreach ($this->serv_principal as $usr) { ?>
-					<tbody>
-						<tr>
-							<td><?php echo $usr['TEXTO_TITULO']; ?></td>
-							<td><?php echo $usr['TEXTO']; ?></td>
-							<td>
-								<?php if($usr['IMAGEN'] == NULL){ ?>
-									Sin imagen
-								<?php }else{ ?>
-									<a class="example-image-link" href="/<?php echo $usr["IMAGEN"]; ?>" data-lightbox="example-1"><img class="example-image oculto" src="/<?php echo $usr["IMAGEN"]; ?>"  alt="image-1" style="width: 100px;"/></a>
-								<?php } ?>
-								
-							</td>
-							<td>
-								<a href="/servicios/editarprincipal/id/<?php echo $usr["ID_TEXTO"] ?>"><i class="fa fa-2x fa-edit"></i></a>
-							</td>
-						</tr>
-					</tbody>
-					<?php } ?>
-					</table>
-				</div>
-			</div>
-
-
-			<div class="row">
-			    <div class="col m12 s12">
-			      <span style="font-size:20px; color: rgb(74,79,84); letter-spacing: 0.1em; font-weight: bold;">Servicios</span>
-			    </div>
 			</div>
 			<table class="table text-left table-hover">
 			<thead>
@@ -171,11 +113,11 @@
 						<a class="example-image-link" href="/<?php echo $usr["imagen"]; ?>" data-lightbox="example-1"><img class="example-image oculto" src="/<?php echo $usr["imagen"]; ?>"  alt="image-1" style="width: 100px;"/></a>
 					</td>
 					<td>
-						<a href="/servicios/editarservicio/id/<?php echo $usr["id"] ?>"><i class="fa fa-2x fa-edit"></i></a>
+						<a href="/servicios/editarservicio/id/<?php echo $usr["id"] ?>" class="st-btn btn  modal-trigger"><i class="material-icons">edit</i></a>
 					</td>
-					<td>
+<!-- 					<td>
 						<a class="delete_file" data-id="<?php echo $usr["id"]; ?>" data-op="3"><span class="warning"><i class="fa fa-2x fa-trash" style="color: red"></i></span></a>
-					</td>
+					</td> -->
 				</tr>
 			</tbody>
 			<?php } ?>

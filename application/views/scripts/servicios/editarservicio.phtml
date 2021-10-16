@@ -20,7 +20,7 @@
 
 <div class="row" style="margin-top: 20px;">
     <div class="col m12 s12 text-center">
-      <span style="font-size:30px; color: rgb(74,79,84); letter-spacing: 0.1em; font-weight: bold;">Editar Servicio</span>
+      <span style="font-size:30px; color: rgb(74,79,84); letter-spacing: 0.1em; font-weight: bold;">Editar Seccion</span>
     </div>
 </div>
 
@@ -37,7 +37,7 @@
                   <div class="input-field col m12 s12">
                       <i class="material-icons prefix">account_circle</i>
                       <input id="name" type="text" value="<?php echo $key['nombre']; ?>" name="name" class="validate" required>
-                      <label for="name">* Nombre Servicio:</label>
+                      <label for="name">* Nombre Sección:</label>
                   </div>
 
                 <div class=" file-field input-field col m6 s12">
@@ -83,9 +83,8 @@
 <script type="text/javascript">
         $("#guardar").click(function(){
           var nombre = document.getElementById("name").value;
-          var imagen = document.getElementById("imagen").value;
-
-            if(nombre == "" || imagen == ""){
+          
+            if(nombre == "" ){
                 swal({
                   title: "Para agregar a un servicio debes ingresar todos los datos.",
                 });

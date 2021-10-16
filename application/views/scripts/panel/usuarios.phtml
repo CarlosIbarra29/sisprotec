@@ -147,8 +147,8 @@
     <div class="modal-footer">
       	
       	</form>
-      	<button class=" btn" id="adduser">Guardar</button>
-      	<button  class="modal-close red btn">Cerrar</button>
+      	<button class=" btn st-btn" id="adduser">Guardar</button>
+      	<button  class="modal-close st-btn btn">Cerrar</button>
     </div>
   </div>
 <!-- ================================================================================================= -->
@@ -198,14 +198,15 @@
 					<!-- <td><?php echo $usr["telefono"]; ?></td> -->
 					<td><?php echo $usr["correo"]; ?></td>
 					<td><?php echo $usr["namerol"]; ?></td>
+<!-- 					<td>
+						<a href="/panel/usuariodetail/id/<?php echo $usr["id"] ?>" class="st-btn btn  modal-trigger"><i class="fa fa-2x fa-id-card-o"></i></a>
+
+					</td> -->
 					<td>
-						<a href="/panel/usuariodetail/id/<?php echo $usr["id"] ?>"><i class="fa fa-2x fa-id-card-o"></i></a>	
+						<a href="/panel/usuariosedit/id/<?php echo $usr["id"] ?>" class="st-btn btn  modal-trigger"><i class="fa fa-2x fa-edit"></i></a>
 					</td>
 					<td>
-						<a href="/panel/usuariosedit/id/<?php echo $usr["id"] ?>"><i class="fa fa-2x fa-edit"></i></a>
-					</td>
-					<td>
-						<a class="delete" href="/panel/requestdeletealluser/id/<?php echo $usr["id"]; ?>" ><span class="warning"><i class="fa fa-2x fa-trash" style="color: red"></i></span></a>
+						<a href="/panel/requestdeletealluser/id/<?php echo $usr["id"]; ?>" class="st-btn btn delete modal-trigger"><i class="fa fa-2x fa-trash"></i></a>
 					</td>
 				</tr>
 			</tbody>
