@@ -1654,13 +1654,13 @@ body {
  * ## links
  * ------------------------------------------------------------------- */
 a {
-    color: var(--color-1);
+    color: black;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
 
 a:hover, a:focus, a:active {
-    color: var(--color-2);
+    color: var(--color-7);
 }
 
 a:hover, a:active {
@@ -3043,7 +3043,7 @@ input::-moz-focus-inner {
     font-size: var(--text-xl);
     line-height: var(--vspace-1_25);
     margin-top: 0;
-    margin-bottom: calc(0.125 * var(--space));
+    margin-bottom: calc(0.5 * var(--space));
 }
 
 .section-head .desc {
@@ -4660,8 +4660,10 @@ margin:auto;
 }
 
 .modal-popup img {
-    margin-bottom: var(--vspace-0_25);
-    /*max-width: 500px;*/
+    margin-bottom: var(--vspace-0_5);
+    margin-top: var(--vspace-0_5);
+    max-width: 350px;
+    border-radius: 20px;
 }
 
 .modal-popup h5 {
@@ -4673,7 +4675,7 @@ margin:auto;
 }
 
 .modal-popup__desc1 {
-    padding: 0 5rem 1.2rem;
+    padding: 0 0rem;
 }
 
 .modal-popup__desc2 {
@@ -5360,7 +5362,7 @@ margin:auto;
 }
 
 .s-footer a:hover, .s-footer a:focus {
-    color: var(--color-1);
+    color: var(--color-7);
 }
 
 /* ------------------------------------------------------------------- 

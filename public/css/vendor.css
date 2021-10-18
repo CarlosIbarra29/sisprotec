@@ -246,7 +246,7 @@ pre[class*="language-"] {
     line-height: 42px;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
     border: 0;
-    background: none;
+    background: rgba(235, 207, 0, 1);
     outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -261,7 +261,7 @@ pre[class*="language-"] {
     content: "";
     height: 20px;
     width: 2px;
-    background-color: white;
+    background-color: rgba(235, 207, 0, 1) !important;
     position: absolute;
     top: 11px;
     left: 20px;
@@ -303,7 +303,7 @@ pre[class*="language-"] {
 }
 
 .lity-close:hover::before, .lity-close:hover::after, .lity-close:focus::before, .lity-close:focus::after, .lity-close:active::before, .lity-close:active::after, .lity-close:visited::before, .lity-close:visited::after {
-    background-color: var(--color-1);
+    background-color: white;
 }
 
 /* Image */
