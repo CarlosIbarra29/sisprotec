@@ -318,7 +318,314 @@ class PanelController extends Zend_Controller_Action{
         }
     }
 
+    public function clientesAction(){
+        
+        $this->view->quienessomos = $this->_season->quienessomos();      
+        $this->view->slider = $this->_season->sliderprincipal();
+        $this->view->seccion = $this->_season->secciones();
+        
+        $table="footer";
+        $this->view->footer = $this->_season->GetAll($table);
 
+        $table="clientes";
+        $this->view->Clientes = $this->_season->GetAll($table);
+
+    }
+
+
+    public function requestudpclienteAction(){
+        $this->_helper->layout()->disableLayout();
+        $this->_helper->viewRenderer->setNoRender(true);
+        $post = $this->getRequest()->getPost();
+
+        if($this->getRequest()->getPost()){
+ 
+            if($post['id'] == 1){
+                $logo_cliente = $_FILES['file_mision']['name'];
+                if(empty($logo_cliente)){ 
+                    $urldb = $post['url_mision'];
+                }else{
+                    $bytes = $_FILES['file_mision']['size'];
+                    $res = $this->formatSizeUnits($bytes);
+                    if($res == 0){ 
+                        print '<script language="JavaScript">'; 
+                        print 'alert("La imagen supera el maximo de tamaño");'; 
+                        print '</script>'; 
+                    }else{
+                        $info = new SplFileInfo($_FILES['file_mision']['name']);
+                        $ext = $info->getExtension();
+                        $url = 'img/clientes/';
+                        $urldb = $url.$info;
+                        move_uploaded_file($_FILES['file_mision']['tmp_name'],$urldb);
+                    }
+                }
+                $desc = $post['nombrec'];
+                $result = $this->_season->updateallclientes($post,$urldb,$desc);
+            }
+
+            if($post['id'] == 2){
+                $logo_cliente = $_FILES['file_mision']['name'];
+                if(empty($logo_cliente)){ 
+                    $urldb = $post['url_mision'];
+                }else{
+                    $bytes = $_FILES['file_mision']['size'];
+                    $res = $this->formatSizeUnits($bytes);
+                    if($res == 0){ 
+                        print '<script language="JavaScript">'; 
+                        print 'alert("La imagen supera el maximo de tamaño");'; 
+                        print '</script>'; 
+                    }else{
+                        $info = new SplFileInfo($_FILES['file_mision']['name']);
+                        $ext = $info->getExtension();
+                        $url = 'img/clientes/';
+                        $urldb = $url.$info;
+                        move_uploaded_file($_FILES['file_mision']['tmp_name'],$urldb);
+                    }
+                }
+                $desc = $post['nombrec'];
+                $result = $this->_season->updateallclientes($post,$urldb,$desc);
+            }
+
+            if($post['id'] == 3){
+                $logo_cliente = $_FILES['file_mision']['name'];
+                if(empty($logo_cliente)){ 
+                    $urldb = $post['url_mision'];
+                }else{
+                    $bytes = $_FILES['file_mision']['size'];
+                    $res = $this->formatSizeUnits($bytes);
+                    if($res == 0){ 
+                        print '<script language="JavaScript">'; 
+                        print 'alert("La imagen supera el maximo de tamaño");'; 
+                        print '</script>'; 
+                    }else{
+                        $info = new SplFileInfo($_FILES['file_mision']['name']);
+                        $ext = $info->getExtension();
+                        $url = 'img/clientes/';
+                        $urldb = $url.$info;
+                        move_uploaded_file($_FILES['file_mision']['tmp_name'],$urldb);
+                    }
+                }
+                $desc = $post['nombrec'];
+                $result = $this->_season->updateallclientes($post,$urldb,$desc);
+            }
+
+            if($post['id'] == 4){
+                $logo_cliente = $_FILES['file_mision']['name'];
+                if(empty($logo_cliente)){ 
+                    $urldb = $post['url_mision'];
+                }else{
+                    $bytes = $_FILES['file_mision']['size'];
+                    $res = $this->formatSizeUnits($bytes);
+                    if($res == 0){ 
+                        print '<script language="JavaScript">'; 
+                        print 'alert("La imagen supera el maximo de tamaño");'; 
+                        print '</script>'; 
+                    }else{
+                        $info = new SplFileInfo($_FILES['file_mision']['name']);
+                        $ext = $info->getExtension();
+                        $url = 'img/clientes/';
+                        $urldb = $url.$info;
+                        move_uploaded_file($_FILES['file_mision']['tmp_name'],$urldb);
+                    }
+                }
+                $desc = $post['nombrec'];
+                $result = $this->_season->updateallclientes($post,$urldb,$desc);
+            }
+
+            if($post['id'] == 5){
+                $logo_cliente = $_FILES['file_mision']['name'];
+                if(empty($logo_cliente)){ 
+                    $urldb = $post['url_mision'];
+                }else{
+                    $bytes = $_FILES['file_mision']['size'];
+                    $res = $this->formatSizeUnits($bytes);
+                    if($res == 0){ 
+                        print '<script language="JavaScript">'; 
+                        print 'alert("La imagen supera el maximo de tamaño");'; 
+                        print '</script>'; 
+                    }else{
+                        $info = new SplFileInfo($_FILES['file_mision']['name']);
+                        $ext = $info->getExtension();
+                        $url = 'img/clientes/';
+                        $urldb = $url.$info;
+                        move_uploaded_file($_FILES['file_mision']['tmp_name'],$urldb);
+                    }
+                }
+                $desc = $post['nombrec'];
+                $result = $this->_season->updateallclientes($post,$urldb,$desc);
+            }
+
+            if($post['id'] == 6){
+                $logo_cliente = $_FILES['file_mision']['name'];
+                if(empty($logo_cliente)){ 
+                    $urldb = $post['url_mision'];
+                }else{
+                    $bytes = $_FILES['file_mision']['size'];
+                    $res = $this->formatSizeUnits($bytes);
+                    if($res == 0){ 
+                        print '<script language="JavaScript">'; 
+                        print 'alert("La imagen supera el maximo de tamaño");'; 
+                        print '</script>'; 
+                    }else{
+                        $info = new SplFileInfo($_FILES['file_mision']['name']);
+                        $ext = $info->getExtension();
+                        $url = 'img/clientes/';
+                        $urldb = $url.$info;
+                        move_uploaded_file($_FILES['file_mision']['tmp_name'],$urldb);
+                    }
+                }
+                $desc = $post['nombrec'];
+                $result = $this->_season->updateallclientes($post,$urldb,$desc);
+            }
+
+            // if($post['id'] == 7){
+            //     $logo_cliente = $_FILES['file_mision']['name'];
+            //     if(empty($logo_cliente)){ 
+            //         $urldb = $post['url_mision'];
+            //     }else{
+            //         $bytes = $_FILES['file_mision']['size'];
+            //         $res = $this->formatSizeUnits($bytes);
+            //         if($res == 0){ 
+            //             print '<script language="JavaScript">'; 
+            //             print 'alert("La imagen supera el maximo de tamaño");'; 
+            //             print '</script>'; 
+            //         }else{
+            //             $info = new SplFileInfo($_FILES['file_mision']['name']);
+            //             $ext = $info->getExtension();
+            //             $url = 'img/clientes/';
+            //             $urldb = $url.$info;
+            //             move_uploaded_file($_FILES['file_mision']['tmp_name'],$urldb);
+            //         }
+            //     }
+            //     $desc = $post['nombrec'];
+            //     $result = $this->_season->updateallclientes($post,$urldb,$desc);
+            // }
+
+            // if($post['id'] == 8){
+            //     $logo_cliente = $_FILES['file_mision']['name'];
+            //     if(empty($logo_cliente)){ 
+            //         $urldb = $post['url_mision'];
+            //     }else{
+            //         $bytes = $_FILES['file_mision']['size'];
+            //         $res = $this->formatSizeUnits($bytes);
+            //         if($res == 0){ 
+            //             print '<script language="JavaScript">'; 
+            //             print 'alert("La imagen supera el maximo de tamaño");'; 
+            //             print '</script>'; 
+            //         }else{
+            //             $info = new SplFileInfo($_FILES['file_mision']['name']);
+            //             $ext = $info->getExtension();
+            //             $url = 'img/clientes/';
+            //             $urldb = $url.$info;
+            //             move_uploaded_file($_FILES['file_mision']['tmp_name'],$urldb);
+            //         }
+            //     }
+            //     $desc = $post['nombrec'];
+            //     $result = $this->_season->updateallclientes($post,$urldb,$desc);
+            // }
+
+            // if($post['id'] == 9){
+            //     $logo_cliente = $_FILES['file_mision']['name'];
+            //     if(empty($logo_cliente)){ 
+            //         $urldb = $post['url_mision'];
+            //     }else{
+            //         $bytes = $_FILES['file_mision']['size'];
+            //         $res = $this->formatSizeUnits($bytes);
+            //         if($res == 0){ 
+            //             print '<script language="JavaScript">'; 
+            //             print 'alert("La imagen supera el maximo de tamaño");'; 
+            //             print '</script>'; 
+            //         }else{
+            //             $info = new SplFileInfo($_FILES['file_mision']['name']);
+            //             $ext = $info->getExtension();
+            //             $url = 'img/clientes/';
+            //             $urldb = $url.$info;
+            //             move_uploaded_file($_FILES['file_mision']['tmp_name'],$urldb);
+            //         }
+            //     }
+            //     $desc = $post['nombrec'];
+            //     $result = $this->_season->updateallclientes($post,$urldb,$desc);
+            // }
+
+            // if($post['id'] == 10){
+            //     $logo_cliente = $_FILES['file_mision']['name'];
+            //     if(empty($logo_cliente)){ 
+            //         $urldb = $post['url_mision'];
+            //     }else{
+            //         $bytes = $_FILES['file_mision']['size'];
+            //         $res = $this->formatSizeUnits($bytes);
+            //         if($res == 0){ 
+            //             print '<script language="JavaScript">'; 
+            //             print 'alert("La imagen supera el maximo de tamaño");'; 
+            //             print '</script>'; 
+            //         }else{
+            //             $info = new SplFileInfo($_FILES['file_mision']['name']);
+            //             $ext = $info->getExtension();
+            //             $url = 'img/clientes/';
+            //             $urldb = $url.$info;
+            //             move_uploaded_file($_FILES['file_mision']['tmp_name'],$urldb);
+            //         }
+            //     }
+            //     $desc = $post['nombrec'];
+            //     $result = $this->_season->updateallclientes($post,$urldb,$desc);
+            // }
+
+            // if($post['id'] == 11){
+            //     $logo_cliente = $_FILES['file_mision']['name'];
+            //     if(empty($logo_cliente)){ 
+            //         $urldb = $post['url_mision'];
+            //     }else{
+            //         $bytes = $_FILES['file_mision']['size'];
+            //         $res = $this->formatSizeUnits($bytes);
+            //         if($res == 0){ 
+            //             print '<script language="JavaScript">'; 
+            //             print 'alert("La imagen supera el maximo de tamaño");'; 
+            //             print '</script>'; 
+            //         }else{
+            //             $info = new SplFileInfo($_FILES['file_mision']['name']);
+            //             $ext = $info->getExtension();
+            //             $url = 'img/clientes/';
+            //             $urldb = $url.$info;
+            //             move_uploaded_file($_FILES['file_mision']['tmp_name'],$urldb);
+            //         }
+            //     }
+            //     $desc = $post['nombrec'];
+            //     $result = $this->_season->updateallclientes($post,$urldb,$desc);
+            // }
+
+            // if($post['id'] == 12){
+            //     $logo_cliente = $_FILES['file_mision']['name'];
+            //     if(empty($logo_cliente)){ 
+            //         $urldb = $post['url_mision'];
+            //     }else{
+            //         $bytes = $_FILES['file_mision']['size'];
+            //         $res = $this->formatSizeUnits($bytes);
+            //         if($res == 0){ 
+            //             print '<script language="JavaScript">'; 
+            //             print 'alert("La imagen supera el maximo de tamaño");'; 
+            //             print '</script>'; 
+            //         }else{
+            //             $info = new SplFileInfo($_FILES['file_mision']['name']);
+            //             $ext = $info->getExtension();
+            //             $url = 'img/clientes/';
+            //             $urldb = $url.$info;
+            //             move_uploaded_file($_FILES['file_mision']['tmp_name'],$urldb);
+            //         }
+            //     }
+            //     $desc = $post['nombrec'];
+            //     $result = $this->_season->updateallclientes($post,$urldb,$desc);
+            // }
+
+
+            if ($result) {
+                return $this-> _redirect('/panel/clientes');
+            }else{
+                print '<script language="JavaScript">'; 
+                print 'alert("Ocurrio un error: Comprueba los datos.");'; 
+                print '</script>'; 
+            }
+        }       
+    }
 
 
     public function formatSizeUnits($bytes){

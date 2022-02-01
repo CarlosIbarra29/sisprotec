@@ -229,4 +229,22 @@ class Application_Model_LandingModel extends Zend_Db_Table_Abstract{
         
         }
     }
+
+    public function ClientesLogos(){
+        try {
+        
+            $db = Zend_Db_Table::getDefaultAdapter();
+            $sql = "SELECT * FROM clientes";
+            $qry = $db->query( $sql );      
+            $row = $qry->fetchAll();
+            $db->closeConnection();
+            
+            return $row;
+        
+        } catch (Exception $e) {
+        
+            echo $e;
+        
+        }
+    }
 }

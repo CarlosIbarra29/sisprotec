@@ -371,6 +371,21 @@ class Application_Model_SeasonPanelModel extends Zend_Db_Table_Abstract{
     }
 
 
+    public function updateallclientes($post,$imagen,$desc){
+        try {
+            $db = Zend_Db_Table::getDefaultAdapter();
+            $qry = $db->query("UPDATE clientes SET name_cliente = ?, logo_cliente = ? WHERE id = ?",array(
+                $desc,
+                $imagen,
+                $post['id']));
+            $db->closeConnection();               
+            return $qry;
+        } 
+        catch (Exception $e) {
+            echo $e;
+        }
+    }// END UPDATE SERVICIO
+
     public function correospendientes(){
          try {
             $db = Zend_Db_Table::getDefaultAdapter();

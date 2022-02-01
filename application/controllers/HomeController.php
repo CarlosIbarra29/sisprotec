@@ -6,6 +6,7 @@ class HomeController extends Zend_Controller_Action{
     private $_season;
     private $_usr;
     private $_reco;
+    private $_landing;
     // private $_pro;
 
     public function init(){
@@ -15,6 +16,7 @@ class HomeController extends Zend_Controller_Action{
         $this->_season = new Application_Model_SeasonTokensModel;
         $this->_usr = new Application_Model_SeasonPanelModel;
         $this->_panel = new Application_Model_GpsPanelModel;
+        $this->_landing = new Application_Model_LandingModel;
     }//init
 
     public function indexAction(){
@@ -59,6 +61,7 @@ class HomeController extends Zend_Controller_Action{
     }
 
     public function contactoAction(){
+        $this->view->Footer = $this->_landing->Footer();
         
     }
 

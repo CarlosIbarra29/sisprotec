@@ -4575,6 +4575,12 @@ margin:auto;
     padding-bottom: calc(5 * var(--space));
 }
 
+
+.s-clientes {
+    background-color: white;
+    padding-top: calc(2 * var(--space));
+    padding-bottom: calc(2 * var(--space));
+}
 /* ------------------------------------------------------------------- 
  * ## folio list
  * ------------------------------------------------------------------- */
@@ -4603,6 +4609,8 @@ margin:auto;
 .folio-item img {
     display: block;
     margin: 0;
+    /*width: 352px;
+    height: 235px;*/
 }
 
 .folio-item__text {

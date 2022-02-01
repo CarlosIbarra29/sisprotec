@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/vendor.css">
 
-
+    <link rel="shortcut icon" href="/img/Sispro (9).png" />
     <!-- script
     ================================================== -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
@@ -47,8 +47,8 @@
     <!-- favicons
     ================================================== -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/3a_original.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/3a_original.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/Sispro (9).png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/Sispro (9).png">
     <link rel="manifest" href="site.webmanifest">
     
 
@@ -449,6 +449,59 @@
 
     </section> <!-- end s-portfolio -->
 
+
+<section id="Clientes" class="s-clientes target-section">
+	<div class="row">
+		<div class="col-sm-12 text-center">
+			<span style="font-size: 30px; color:#575757; letter-spacing: 0.2em; font-weight: 100;">Nuestros Clientes</span><br><br>
+
+			<div id="clientesd" class="carousel slide" data-ride="carousel">
+				<!-- The slideshow -->
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<p style="letter-spacing: 30px;">
+							<div class="col m4 s6"><img src="/<?php print $this->Clientes[0]['logo_cliente'] ?>"  alt="DiverMetal" style="width: 150px; height: auto;">&nbsp;</div>
+							<div class="col m4 s6"><img src="/<?php print $this->Clientes[1]['logo_cliente'] ?>"  alt="DiverMetal" style="width: 150px; height: auto;">&nbsp;</div>
+							<div class="col m4 s6"><img src="/<?php print $this->Clientes[2]['logo_cliente'] ?>"  alt="DiverMetal" style="width: 150px; height: auto;">&nbsp;</div>
+          				</p>
+        			</div>
+
+        			<div class="carousel-item">
+        				<p style="letter-spacing: 30px;">
+				        	<div class="col m4 s6"><img src="/<?php print $this->Clientes[3]['logo_cliente'] ?>"  alt="DiverMetal" style="width: 150px; height: auto;">&nbsp;</div>
+							<div class="col m4 s6"><img src="/<?php print $this->Clientes[4]['logo_cliente'] ?>"  alt="DiverMetal" style="width: 150px; height: auto;">&nbsp;</div>
+							<div class="col m4 s6"><img src="/<?php print $this->Clientes[5]['logo_cliente'] ?>"  alt="DiverMetal" style="width: 150px; height: auto;">&nbsp;</div>
+        				</p>
+      				</div>
+
+      				<!-- <div class="carousel-item">
+      					<p style="letter-spacing: 30px;">
+          					<div class="col m4 s6"><img src="/<?php print $this->Clientes[6]['logo_cliente'] ?>"  alt="DiverMetal" style="width: 150px; height: auto;">&nbsp;</div>
+							<div class="col m4 s6"><img src="/<?php print $this->Clientes[7]['logo_cliente'] ?>"  alt="DiverMetal" style="width: 150px; height: auto;">&nbsp;</div>
+							<div class="col m4 s6"><img src="/<?php print $this->Clientes[8]['logo_cliente'] ?>"  alt="DiverMetal" style="width: 150px; height: auto;">&nbsp;</div>
+        				</p>
+      				</div>
+
+      				<div class="carousel-item">
+      					<p style="letter-spacing: 30px;">
+          					<div class="col m4 s6"><img src="/<?php print $this->Clientes[9]['logo_cliente'] ?>"  alt="DiverMetal" style="width: 150px; height: auto;">&nbsp;</div>
+							<div class="col m4 s6"><img src="/<?php print $this->Clientes[10]['logo_cliente'] ?>"  alt="DiverMetal" style="width: 150px; height: auto;">&nbsp;</div>
+							<div class="col m4 s6"><img src="/<?php print $this->Clientes[11]['logo_cliente'] ?>"  alt="DiverMetal" style="width: 150px; height: auto;">&nbsp;</div>
+        				</p>
+      				</div> -->
+    			</div>
+
+    			<a class="carousel-control-prev" href="#clientesd" data-slide="prev">
+      				<span class="carousel-control-next-icon"><i class="fas fa-arrow-alt-circle-left" style='font-size:25px;color: black'></i></span>
+    			</a>
+
+			    <a class="carousel-control-next" href="#clientesd" data-slide="next">
+			     	<span class="carousel-control-next-icon"><i class="fas fa-arrow-alt-circle-right" style='font-size:25px;color: black'></i></span>
+			    </a>
+			</div>
+		</div>
+	</div>
+</section>
      <!-- Inicio Modal Aviso
                 ================================================== -->
         <div id="modal-a" style="max-width: 750px;" class="modal-popup lity-hide"> 
@@ -662,7 +715,7 @@
         </div>
 
         <div class="ss-go-top1">
-            <a target="_blank" title="whatsApp" name="whatsapp"  href="https://api.whatsapp.com/send?phone=5215571118064&text=SIS PROTEC, ¿Pueden Ayudarme?" >
+            <a target="_blank" title="whatsApp" name="whatsapp"  href="https://api.whatsapp.com/send?phone=5215633081167&text=SIS PROTEC, ¿Pueden Ayudarme?" >
                 <svg viewBox="0 0 32 32" class="whatsapp-ico">
                     <path d=" M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z" fill-rule="evenodd">   
                     </path>

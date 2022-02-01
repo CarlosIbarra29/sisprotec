@@ -366,36 +366,41 @@ setInterval(function() {
                     <img src="/img/Sispro (9).png" style="width: 70px;">
                 </a> 
             </li>
-                <li class="bold moves">
-                    <a href="/index/logout" style="color:red;">Cerrar Sesion <i class="material-icons" style="color:red;">highlight_off</i></a>
-                </li>
-                <li class="bold moves <?php echo getUrl('/panel/index',$actual_link);?>">
-                    <a href="/panel/index/year/<?php echo $year; ?>">Dashboard <i class="material-icons">extension</i></a>
-                </li>
-                <li class="bold moves <?php echo getUrl('/panel/usuarios',$actual_link);?>">
-                    <a href="/panel/usuarios">Usuarios <i class="material-icons">person</i></a>
-                </li>
+                
+            <li class="bold moves">
+                <a href="/index/logout" style="color:red;">Cerrar Sesion <i class="material-icons" style="color:red;">highlight_off</i></a>
+            </li>
+                
+            <li class="bold moves <?php echo getUrl('/panel/index',$actual_link);?>">
+                <a href="/panel/index/year/<?php echo $year; ?>">Dashboard <i class="material-icons">extension</i></a>
+            </li>
+            
+            <li class="bold moves <?php echo getUrl('/panel/usuarios',$actual_link);?>">
+                <a href="/panel/usuarios">Usuarios <i class="material-icons">person</i></a>
+            </li>
 
-                <li class="bold moves <?php echo getUrl('/contacto/bandeja',$actual_link); echo getcontacto($actual_link);?>">
-                    <a href="/contacto/bandeja">Contacto <i class="material-icons">contact_mail</i></a>
-                </li> 
+            <li class="bold moves <?php echo getUrl('/contacto/bandeja',$actual_link); echo getcontacto($actual_link);?>">
+                <a href="/contacto/bandeja">Contacto <i class="material-icons">contact_mail</i></a>
+            </li> 
 
-                <li class="bold moves <?php echo getUrl('/quienes/index',$actual_link);?>">
-                    <a href="/quienes/index">Principal <i class="material-icons">announcement</i></a>
-                </li>  
+            <li class="bold moves <?php echo getUrl('/quienes/index',$actual_link);?>">
+                <a href="/quienes/index">Principal <i class="material-icons">announcement</i></a>
+            </li>  
 
-                <li class="bold moves <?php echo getUrl('/servicios/servicios',$actual_link); echo getservicio($actual_link);?>">
-                    <a href="/servicios/servicios">Servicios <i class="material-icons">assignment</i></a>
-                </li>   
+            <li class="bold moves <?php echo getUrl('/panel/clientes',$actual_link); echo getservicio($actual_link);?>">
+                <a href="/panel/clientes">Clientes <i class="material-icons">person_pin</i></a>
+            </li> 
+
+            <li class="bold moves <?php echo getUrl('/servicios/servicios',$actual_link); echo getservicio($actual_link);?>">
+                <a href="/servicios/servicios">Servicios <i class="material-icons">assignment</i></a>
+            </li>   
         </ul>                  
 
 </header>
 
 <main>
     <nav class="">
-        <div class="row nav-wrapper bread" style="width: 101%; background-color: #ffd700 ;">
-
-        </div>      
+        <div class="row nav-wrapper bread" style="width: 101%; background-color: #ffd700 ;"></div>      
     </nav>  
     <div class="container-fluid">         
         <div class="row">
@@ -407,8 +412,6 @@ setInterval(function() {
         </div>
     </div>      
 </main>
-
-
 
 <meta name="__token" content="{!! csrf_token() !!}" />  
 <script type="text/javascript" src="/js/script.js"></script>
